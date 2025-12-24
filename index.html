@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivid Auto Details | Premium Car Detailing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Curtain Reveal Animation -->
+    <div class="curtain-reveal" id="curtainReveal">
+        <div class="curtain-left"></div>
+        <div class="curtain-right"></div>
+        <div class="curtain-logo">
+            <img src="images/logo.jpg" alt="Vivid">
+            <div class="curtain-brand">
+                <span class="brand-name">VIVID</span>
+                <span class="brand-tagline">AUTO DETAILS</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Screen Navigation Overlay -->
+    <nav class="mega-nav" id="megaNav">
+        <button class="mega-nav-close" id="megaNavClose" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="nav-background">
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+        </div>
+        <div class="nav-content">
+            <div class="nav-main">
+                <ul class="mega-nav-links">
+                    <li class="mega-nav-item" data-index="01">
+                        <a href="index.html?skipIntro=true" class="mega-nav-link">
+                            <span class="link-text">Home</span>
+                            <span class="link-bg">Home</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="02">
+                        <a href="gallery.html" class="mega-nav-link">
+                            <span class="link-text">Gallery</span>
+                            <span class="link-bg">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="03">
+                        <a href="blog.html" class="mega-nav-link">
+                            <span class="link-text">Blog</span>
+                            <span class="link-bg">Blog</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="04">
+                        <a href="faqs.html" class="mega-nav-link">
+                            <span class="link-text">FAQs</span>
+                            <span class="link-bg">FAQs</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <div class="nav-info">
+                    <div class="info-block">
+                        <span class="info-label">Phone</span>
+                        <span class="info-value">(916) 583-8532</span>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">info@vividautodetails.com</span>
+                    </div>
+                </div>
+                <div class="nav-social">
+                    <a href="https://www.instagram.com/vivid.autodetails/" target="_blank">IG</a>
+                    <a href="https://www.yelp.com/biz/vivid-auto-details-elk-grove" target="_blank">YELP</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation - Centered Logo Style -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <!-- Subtle Menu Button -->
+            <button class="menu-trigger" id="menuTrigger">
+                <div class="trigger-box">
+                    <span class="trigger-line"></span>
+                    <span class="trigger-line"></span>
+                </div>
+            </button>
+            <ul class="nav-left">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <a href="#home" class="nav-center">
+                <img src="images/logo.jpg" alt="Vivid Auto Details" class="nav-logo">
+                <span class="nav-brand">VIVID</span>
+            </a>
+            <ul class="nav-right">
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="nav-link cta-link">Book Now</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="mobile-cta">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-media">
+                <img src="images/hero.jpg" alt="Premium Auto Detailing" class="hero-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-label reveal-text">Premium Detailing Service</span>
+                    <h1 class="hero-title">
+                        <span class="title-line reveal-text">Your ride.</span>
+                        <span class="title-line reveal-text">Make it <em>shine.</em></span>
+                    </h1>
+                    <p class="hero-text reveal-text">Welcome to Vivid Auto Details, your one-stop shop for premium car care in Elk Grove, CA. We offer both in-shop and mobile detailing services, proudly serving the Greater Sacramento area with the highest quality of work and an exceptional customer experience to keep your vehicle looking its best.</p>
+                    <div class="hero-actions reveal-text">
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                            <span>Book Now</span>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="tel:9165838532" class="btn-text">
+                            Call Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-bottom">
+                <div class="scroll-prompt">
+                    <span>Scroll</span>
+                    <div class="scroll-arrow">
+                        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-label reveal-text">What We Offer</span>
+                    <h2 class="section-title reveal-text">Our <em>Services</em></h2>
+                    <p class="section-subtitle reveal-text">Professional detailing services tailored to your vehicle's needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card reveal-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Exterior Detail</h3>
+                        <p>Deep wheel cleaning, foam prewash, claybar treatment, 3-6 month paint sealant, tire dressing, and streak-free glass cleaning.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="service-link">Book Service →</a>
+                    </div>
+                    <div class="service-card featured reveal-card">
+                        <div class="featured-badge">Most Popular</div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3>Full Detail Package</h3>
+                        <p>Complete interior and exterior detailing. The ultimate refresh for your vehicle inside and out.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="service-link">Book Service →</a>
+                    </div>
+                    <div class="service-card reveal-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <h3>Interior Detail</h3>
+                        <p>Steam cleaning sanitization, carpet & upholstery extraction, odor elimination, leather cleaning & conditioning, and dashboard trim cleaning.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="service-link">Book Service →</a>
+                    </div>
+                    <div class="service-card reveal-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>Ceramic Coating</h3>
+                        <p>Long-term paint protection with high gloss, hydrophobicity (water beading), and ease of cleaning. Lasts 2-8 years with proper care.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="service-link">Book Service →</a>
+                    </div>
+                    <div class="service-card reveal-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </div>
+                        <h3>Paint Correction</h3>
+                        <p>From paint enhancement (20-30% defect removal) to 2-step correction (70-95% removal). Restore your paint to showroom condition.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="service-link">Book Service →</a>
+                    </div>
+                    <div class="service-card reveal-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M12 8v4M12 16h.01"/>
+                            </svg>
+                        </div>
+                        <h3>Paint Protection Film</h3>
+                        <p>Nearly invisible body armor for your car's finish. Self-healing technology, rock chip defense, UV protection, and custom coverage options.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="service-link">Book Service →</a>
+                    </div>
+                    <div class="service-card reveal-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>Window Tint</h3>
+                        <p>Keep it cool, clean, and protected. Cuts heat by up to 60%, blocks 99% of UV rays, and increases privacy with a sleek custom finish.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="service-link">Book Service →</a>
+                    </div>
+                    <div class="service-card reveal-card">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3>Overnight Detail Service</h3>
+                        <p>Late drop-offs, early pickups — detailing made to fit your schedule. Drop off in the evening, pick up in the morning!</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="service-link">Book Service →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-layout">
+                    <div class="about-left">
+                        <span class="section-label reveal-text">About Us</span>
+                        <h2 class="section-title reveal-text">Why Choose <em>Vivid?</em></h2>
+                        <p class="about-lead reveal-text">Founded in 2020 by Erik Pham, Vivid Auto Details grew from a passion for cars into a full professional shop. We focus on trust, building relationships, and serving our community with the highest quality work.</p>
+                        <div class="about-team reveal-card">
+                            <h4>Meet Our Team</h4>
+                            <ul class="team-list">
+                                <li><strong>Erik Pham</strong> - Owner/Operator</li>
+                                <li><strong>Randal N</strong> - Shop Manager / PPF Lead</li>
+                                <li><strong>Ruslan D</strong> - Window Tint Lead</li>
+                                <li><strong>Megan M</strong> - Lead Detailer</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-right">
+                        <div class="about-image reveal-card">
+                            <img src="images/Vivid Van.jpg" alt="Vivid Auto Details Van">
+                            <div class="image-frame"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-row">
+                    <div class="feature reveal-text">
+                        <span class="feature-icon">✓</span>
+                        <span>Licensed & Insured</span>
+                    </div>
+                    <div class="feature reveal-text">
+                        <span class="feature-icon">✓</span>
+                        <span>100% Satisfaction Guarantee</span>
+                    </div>
+                    <div class="feature reveal-text">
+                        <span class="feature-icon">✓</span>
+                        <span>Mobile Service Available</span>
+                    </div>
+                    <div class="feature reveal-text">
+                        <span class="feature-icon">✓</span>
+                        <span>Overnight Service Available</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-label reveal-text">Follow Us</span>
+                    <h2 class="section-title reveal-text">Latest from <em>Instagram</em></h2>
+                    <p class="section-subtitle reveal-text">See what we've been up to <a href="https://www.instagram.com/vivid.autodetails/" target="_blank" class="instagram-link">@vivid.autodetails</a></p>
+                </div>
+                <div class="instagram-feed reveal-card" id="instagram-feed">
+                    <!-- Elfsight Instagram Feed | Vivid Auto Details -->
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-082bba7c-1881-438b-a99b-cb99b0745642" data-elfsight-app-lazy></div>
+                </div>
+                <div class="instagram-cta">
+                    <a href="https://www.instagram.com/vivid.autodetails/" target="_blank" class="btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        <span>Follow Us on Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <span class="section-label reveal-text">Get In Touch</span>
+                        <h2 class="section-title reveal-text">Ready to <em>Transform</em> Your Vehicle?</h2>
+                        <p class="contact-intro reveal-text">Ready to get your vehicle looking its best? Book your appointment through our online system or give us a call!</p>
+                        <div class="contact-details">
+                            <div class="detail-item reveal-text">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="detail-label">Phone</span>
+                                    <span class="detail-value">(916) 583-8532</span>
+                                </div>
+                            </div>
+                            <div class="detail-item reveal-text">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="detail-label">Email</span>
+                                    <span class="detail-value">info@vividautodetails.com</span>
+                                </div>
+                            </div>
+                            <div class="detail-item reveal-text">
+                                <div class="detail-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="10" r="3"/>
+                                        <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="detail-label">Address</span>
+                                    <span class="detail-value">9918 Kent St Unit 3, Elk Grove, CA 95624</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-cta-wrap reveal-card">
+                        <h3>Book Your Appointment</h3>
+                        <p>Schedule your detail online through our booking system. Quick, easy, and convenient.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary btn-large">
+                            <span>Book Now</span>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <div class="contact-hours">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Saturday: 9am - 7pm</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <img src="images/logo.jpg" alt="Vivid">
+                        <span>VIVID</span>
+                    </a>
+                    <p>Premium auto detailing in Elk Grove, CA. In-shop and mobile services for the Greater Sacramento area.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/vivid.autodetails/" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.yelp.com/biz/vivid-auto-details-elk-grove" target="_blank" aria-label="Yelp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.14 11.18L9.24 2.77C9.09 2.32 8.58 2.1 8.14 2.28L4.24 3.93C3.8 4.11 3.58 4.62 3.76 5.06L6.66 13.47C6.84 13.91 7.35 14.13 7.79 13.95L11.69 12.3C12.13 12.12 12.32 11.62 12.14 11.18M21.79 15.44L18.14 13.29C17.74 13.06 17.22 13.19 16.99 13.59L14.84 17.24C14.61 17.64 14.74 18.16 15.14 18.39L18.79 20.54C19.19 20.77 19.71 20.64 19.94 20.24L22.09 16.59C22.32 16.19 22.19 15.67 21.79 15.44M16.99 10.41L18.14 10.71C18.58 10.82 19.03 10.56 19.14 10.12L20.29 5.89C20.4 5.45 20.14 5 19.7 4.89L15.47 3.74C15.03 3.63 14.58 3.89 14.47 4.33L13.32 8.56C13.21 9 13.47 9.45 13.91 9.56L14.91 9.82C14.91 9.82 15.36 9.96 15.8 10.08C16.24 10.2 16.99 10.41 16.99 10.41M10.35 14.38L6.12 15.53C5.68 15.64 5.42 16.09 5.53 16.53L6.68 20.76C6.79 21.2 7.24 21.46 7.68 21.35L11.91 20.2C12.35 20.09 12.61 19.64 12.5 19.2L11.35 14.97C11.24 14.53 10.79 14.27 10.35 14.38"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="https://vividautodetails.fieldd.co/" target="_blank">Exterior Detail</a></li>
+                        <li><a href="https://vividautodetails.fieldd.co/" target="_blank">Interior Detail</a></li>
+                        <li><a href="https://vividautodetails.fieldd.co/" target="_blank">Paint Correction</a></li>
+                        <li><a href="https://vividautodetails.fieldd.co/" target="_blank">Ceramic Coating</a></li>
+                        <li><a href="https://vividautodetails.fieldd.co/" target="_blank">Paint Protection Film</a></li>
+                        <li><a href="https://vividautodetails.fieldd.co/" target="_blank">Window Tint</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hours</h4>
+                    <ul class="hours">
+                        <li>Mon - Sat: 9am - 7pm</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vivid Auto Details. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

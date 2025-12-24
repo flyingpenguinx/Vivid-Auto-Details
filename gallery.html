@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Vivid Auto Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Full Screen Navigation Overlay -->
+    <nav class="mega-nav" id="megaNav">
+        <button class="mega-nav-close" id="megaNavClose" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="nav-background">
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+        </div>
+        <div class="nav-content">
+            <div class="nav-main">
+                <ul class="mega-nav-links">
+                    <li class="mega-nav-item" data-index="01">
+                        <a href="index.html?skipIntro=true" class="mega-nav-link">
+                            <span class="link-text">Home</span>
+                            <span class="link-bg">Home</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="02">
+                        <a href="gallery.html" class="mega-nav-link">
+                            <span class="link-text">Gallery</span>
+                            <span class="link-bg">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="03">
+                        <a href="blog.html" class="mega-nav-link">
+                            <span class="link-text">Blog</span>
+                            <span class="link-bg">Blog</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="04">
+                        <a href="faqs.html" class="mega-nav-link">
+                            <span class="link-text">FAQs</span>
+                            <span class="link-bg">FAQs</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <div class="nav-info">
+                    <div class="info-block">
+                        <span class="info-label">Phone</span>
+                        <span class="info-value">(916) 583-8532</span>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">info@vividautodetails.com</span>
+                    </div>
+                </div>
+                <div class="nav-social">
+                    <a href="https://www.instagram.com/vivid.autodetails/" target="_blank">IG</a>
+                    <a href="https://www.yelp.com/biz/vivid-auto-details-elk-grove" target="_blank">YELP</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation -->
+    <header class="header header-solid" id="header">
+        <nav class="nav">
+            <button class="menu-trigger" id="menuTrigger">
+                <div class="trigger-box">
+                    <span class="trigger-line"></span>
+                    <span class="trigger-line"></span>
+                </div>
+            </button>
+            <ul class="nav-left">
+                <li><a href="index.html?skipIntro=true" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+            <a href="index.html?skipIntro=true" class="nav-center">
+                <img src="images/logo.jpg" alt="Vivid Auto Details" class="nav-logo">
+                <span class="nav-brand">VIVID</span>
+            </a>
+            <ul class="nav-right">
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="nav-link cta-link">Book Now</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="mobile-cta">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero-bg">
+                <img src="images/hero.jpg" alt="Gallery">
+                <div class="page-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="section-label">Follow Us</span>
+                    <h1 class="page-title">Photo <em>Gallery</em></h1>
+                    <p class="page-subtitle">Check out our latest posts from Instagram @vivid.autodetails</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-page">
+            <div class="container">
+                <!-- Instagram Feed -->
+                <div class="instagram-section">
+                    <div class="instagram-header">
+                        <a href="https://www.instagram.com/vivid.autodetails/" target="_blank" class="instagram-profile">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="instagram-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            <span>@vivid.autodetails</span>
+                        </a>
+                        <a href="https://www.instagram.com/vivid.autodetails/" target="_blank" class="btn-secondary">
+                            Follow Us
+                        </a>
+                    </div>
+                    <div class="instagram-feed-large" id="instagram-feed-gallery">
+                        <!-- Elfsight Instagram Feed | Vivid Auto Details -->
+                        <script src="https://elfsightcdn.com/platform.js" async></script>
+                        <div class="elfsight-app-082bba7c-1881-438b-a99b-cb99b0745642" data-elfsight-app-lazy></div>
+                    </div>
+                    <p class="instagram-note">Follow us on Instagram to see our latest work and behind-the-scenes content!</p>
+                </div>
+
+                <!-- Photoshoot Gallery -->
+                <div class="photoshoot-section">
+                    <div class="section-header center">
+                        <span class="section-label">Photo Gallery</span>
+                        <h2 class="section-title">Recent <em>Photoshoot</em></h2>
+                        <p class="section-subtitle">Some recent photos from our latest shoot</p>
+                    </div>
+                    <div class="photoshoot-grid">
+                        <div class="photoshoot-item">
+                            <img src="images/1.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/33.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/3.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/4.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/5.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/6.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/14.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/15.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/16.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/17.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/18.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/19.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/20.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/21.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/22.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/23.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/24.jpg" alt="Vivid Auto Details">
+                        </div>
+                        <div class="photoshoot-item">
+                            <img src="images/29.jpg" alt="Vivid Auto Details">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Get <em>Started?</em></h2>
+                    <p>Book your appointment today and experience the Vivid difference</p>
+                    <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                        <span>Book Now</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.jpg" alt="Vivid">
+                        <span>VIVID</span>
+                    </a>
+                    <p>Premium auto detailing services bringing your vehicle back to showroom condition.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/vivid.autodetails/" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.yelp.com/biz/vivid-auto-details-elk-grove" target="_blank" aria-label="Yelp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.14 11.18L9.24 2.77C9.09 2.32 8.58 2.1 8.14 2.28L4.24 3.93C3.8 4.11 3.58 4.62 3.76 5.06L6.66 13.47C6.84 13.91 7.35 14.13 7.79 13.95L11.69 12.3C12.13 12.12 12.32 11.62 12.14 11.18M21.79 15.44L18.14 13.29C17.74 13.06 17.22 13.19 16.99 13.59L14.84 17.24C14.61 17.64 14.74 18.16 15.14 18.39L18.79 20.54C19.19 20.77 19.71 20.64 19.94 20.24L22.09 16.59C22.32 16.19 22.19 15.67 21.79 15.44M16.99 10.41L18.14 10.71C18.58 10.82 19.03 10.56 19.14 10.12L20.29 5.89C20.4 5.45 20.14 5 19.7 4.89L15.47 3.74C15.03 3.63 14.58 3.89 14.47 4.33L13.32 8.56C13.21 9 13.47 9.45 13.91 9.56L14.91 9.82C14.91 9.82 15.36 9.96 15.8 10.08C16.24 10.2 16.99 10.41 16.99 10.41M10.35 14.38L6.12 15.53C5.68 15.64 5.42 16.09 5.53 16.53L6.68 20.76C6.79 21.2 7.24 21.46 7.68 21.35L11.91 20.2C12.35 20.09 12.61 19.64 12.5 19.2L11.35 14.97C11.24 14.53 10.79 14.27 10.35 14.38"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hours</h4>
+                    <ul class="hours">
+                        <li>Mon - Sat: 9am - 7pm</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vivid Auto Details. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

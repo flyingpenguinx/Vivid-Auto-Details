@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Vivid Auto Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Full Screen Navigation Overlay -->
+    <nav class="mega-nav" id="megaNav">
+        <button class="mega-nav-close" id="megaNavClose" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="nav-background">
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+        </div>
+        <div class="nav-content">
+            <div class="nav-main">
+                <ul class="mega-nav-links">
+                    <li class="mega-nav-item" data-index="01">
+                        <a href="index.html?skipIntro=true" class="mega-nav-link">
+                            <span class="link-text">Home</span>
+                            <span class="link-bg">Home</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="02">
+                        <a href="gallery.html" class="mega-nav-link">
+                            <span class="link-text">Gallery</span>
+                            <span class="link-bg">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="03">
+                        <a href="blog.html" class="mega-nav-link">
+                            <span class="link-text">Blog</span>
+                            <span class="link-bg">Blog</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="04">
+                        <a href="faqs.html" class="mega-nav-link">
+                            <span class="link-text">FAQs</span>
+                            <span class="link-bg">FAQs</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <div class="nav-info">
+                    <div class="info-block">
+                        <span class="info-label">Phone</span>
+                        <span class="info-value">(916) 583-8532</span>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">info@vividautodetails.com</span>
+                    </div>
+                </div>
+                <div class="nav-social">
+                    <a href="https://www.instagram.com/vivid.autodetails/" target="_blank">IG</a>
+                    <a href="https://www.yelp.com/biz/vivid-auto-details-elk-grove" target="_blank">YELP</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation -->
+    <header class="header header-solid" id="header">
+        <nav class="nav">
+            <button class="menu-trigger" id="menuTrigger">
+                <div class="trigger-box">
+                    <span class="trigger-line"></span>
+                    <span class="trigger-line"></span>
+                </div>
+            </button>
+            <ul class="nav-left">
+                <li><a href="index.html?skipIntro=true" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+            <a href="index.html?skipIntro=true" class="nav-center">
+                <img src="images/logo.jpg" alt="Vivid Auto Details" class="nav-logo">
+                <span class="nav-brand">VIVID</span>
+            </a>
+            <ul class="nav-right">
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="nav-link cta-link">Book Now</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="mobile-cta">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero-bg">
+                <img src="images/hero.jpg" alt="FAQs">
+                <div class="page-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="page-hero-content">
+                    <span class="section-label">Got Questions?</span>
+                    <h1 class="page-title">Frequently Asked <em>Questions</em></h1>
+                    <p class="page-subtitle">Find answers to common questions about our detailing services</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section class="faq-page">
+            <div class="container">
+                <div class="faq-grid">
+                    <!-- FAQ Categories -->
+                    <div class="faq-sidebar">
+                        <h3>Categories</h3>
+                        <ul class="faq-categories">
+                            <li><a href="#general" class="active">General Questions</a></li>
+                            <li><a href="#services-faq">Services</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#booking">Booking & Scheduling</a></li>
+                            <li><a href="#aftercare">Aftercare</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- FAQ Content -->
+                    <div class="faq-content">
+                        <!-- General Questions -->
+                        <div class="faq-section" id="general">
+                            <h2>General <em>Questions</em></h2>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is Vivid Auto Details Licensed and Insured?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes we are! Licensed in California State.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is there a reschedule fee?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We do not charge a reschedule fee. We do hope that if there is any conflicts of schedule with your appointment, that you can contact us at your earliest convenience to reschedule your appointment.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Can you detail at my home, office, or apartment?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes! Our mobile unit is equipped with a 100 gallon water tank of spot free water and generator allowing us to service your vehicle at the location of your convenience.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Services -->
+                        <div class="faq-section" id="services-faq">
+                            <h2>Services</h2>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What's included in a Full Detail Package?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Our Full Detail Package includes: complete exterior wash and decontamination, clay bar treatment, one-step polish, premium wax or sealant application, tire and wheel deep clean, full interior vacuum, steam cleaning, leather conditioning, plastic and vinyl treatment, glass cleaning inside and out, and air freshener application.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What is ceramic coating?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Ceramic coating is a liquid polymer that chemically bonds with your vehicle's paint, creating a protective layer. It provides superior protection against UV damage, chemical stains, and minor scratches. Unlike wax, ceramic coating lasts for years and provides hydrophobic properties that make washing your car easier.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Can you remove scratches from my paint?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes, our paint correction service can remove most scratches, swirl marks, and oxidation. Light scratches that haven't penetrated the clear coat can typically be removed entirely. Deeper scratches may be significantly reduced but might not be completely eliminated. We'll assess your vehicle and provide an honest evaluation before proceeding.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing -->
+                        <div class="faq-section" id="pricing">
+                            <h2>Pricing</h2>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How much does detailing cost?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Our pricing varies based on vehicle size, condition, and the services you need. We offer free quotes – simply <a href="https://vividautodetails.fieldd.co/" target="_blank" style="color: #dc2626;">request a quote online</a> or call us at (916) 583-8532 with your vehicle details for an accurate estimate.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Do you charge extra for larger vehicles?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Pricing may vary for larger vehicles like SUVs, trucks, and vans due to the extra time and materials required. We'll provide an exact quote based on your specific vehicle when you <a href="https://vividautodetails.fieldd.co/" target="_blank" style="color: #dc2626;">request a quote</a>.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What forms of payment do you accept?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We accept cash, venmo, zelle, and all major credit cards (+3% Processing Fee).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Booking -->
+                        <div class="faq-section" id="booking">
+                            <h2>Booking & Scheduling</h2>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I book an appointment?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>On the top drop down bar, there will be a "Book Appointment" button where you can go through the booking process. You will receive a confirmation email and a technician will be assigned for your service. Any troubles, please give us a call and we can book the appointment over the phone or text as well (916) 583-8532.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Do you have a waiting area?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes! If you are bringing your car to our location, we have a comfortable waiting area with access to Wi-Fi.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Can I drop my vehicle off at your location?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes we have a shop located in Elk Grove, CA. Drop offs can be made during business hours and by appointment only.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aftercare -->
+                        <div class="faq-section" id="aftercare">
+                            <h2>Aftercare</h2>
+                            
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I maintain my vehicle after a detail?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>To maintain your detail: avoid automatic car washes with brushes, hand wash using the two-bucket method, dry with a microfiber towel, park in shade when possible, and apply a spray wax or quick detailer between details. We provide specific aftercare instructions based on the services performed.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How long does ceramic coating last?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Our professional-grade ceramic coatings typically last 2-5 years depending on the product selected and how well the vehicle is maintained. With proper care including regular washing and annual inspections, some coatings can last even longer. We offer maintenance plans to help extend the life of your coating.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What if I am not satisfied with my detail?</span>
+                                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We guarantee 100% satisfaction with our service. If you are not happy with the service for any reason, please call us immediately for further instructions. A rescheduled clean must be made within 24 hours of the original appointment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Still Have <em>Questions?</em></h2>
+                    <p>Our team is here to help. Give us a call at (916) 583-8532 or book online!</p>
+                    <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                        <span>Book Now</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.jpg" alt="Vivid">
+                        <span>VIVID</span>
+                    </a>
+                    <p>Premium auto detailing services bringing your vehicle back to showroom condition.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/vivid.autodetails/" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.yelp.com/biz/vivid-auto-details-elk-grove" target="_blank" aria-label="Yelp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.14 11.18L9.24 2.77C9.09 2.32 8.58 2.1 8.14 2.28L4.24 3.93C3.8 4.11 3.58 4.62 3.76 5.06L6.66 13.47C6.84 13.91 7.35 14.13 7.79 13.95L11.69 12.3C12.13 12.12 12.32 11.62 12.14 11.18M21.79 15.44L18.14 13.29C17.74 13.06 17.22 13.19 16.99 13.59L14.84 17.24C14.61 17.64 14.74 18.16 15.14 18.39L18.79 20.54C19.19 20.77 19.71 20.64 19.94 20.24L22.09 16.59C22.32 16.19 22.19 15.67 21.79 15.44M16.99 10.41L18.14 10.71C18.58 10.82 19.03 10.56 19.14 10.12L20.29 5.89C20.4 5.45 20.14 5 19.7 4.89L15.47 3.74C15.03 3.63 14.58 3.89 14.47 4.33L13.32 8.56C13.21 9 13.47 9.45 13.91 9.56L14.91 9.82C14.91 9.82 15.36 9.96 15.8 10.08C16.24 10.2 16.99 10.41 16.99 10.41M10.35 14.38L6.12 15.53C5.68 15.64 5.42 16.09 5.53 16.53L6.68 20.76C6.79 21.2 7.24 21.46 7.68 21.35L11.91 20.2C12.35 20.09 12.61 19.64 12.5 19.2L11.35 14.97C11.24 14.53 10.79 14.27 10.35 14.38"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hours</h4>
+                    <ul class="hours">
+                        <li>Mon - Sat: 9am - 7pm</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vivid Auto Details. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
