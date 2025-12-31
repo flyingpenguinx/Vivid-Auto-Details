@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="shortcut icon" href="/favicon.ico">
-    <title>Vivid Auto Details | Premium Car Detailing</title>
+    <title>Vivid Auto Details | Premium Car Detailing in Elk Grove, CA</title>
+    <meta name="description" content="Vivid Auto Details offers premium car detailing, ceramic coating, PPF, and window tinting in Elk Grove & Sacramento. In-shop and mobile services available.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Curtain Reveal Animation -->
@@ -48,18 +51,24 @@
                         </a>
                     </li>
                     <li class="mega-nav-item" data-index="02">
+                        <a href="services.html" class="mega-nav-link">
+                            <span class="link-text">Services</span>
+                            <span class="link-bg">Services</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="03">
                         <a href="gallery.html" class="mega-nav-link">
                             <span class="link-text">Gallery</span>
                             <span class="link-bg">Gallery</span>
                         </a>
                     </li>
-                    <li class="mega-nav-item" data-index="03">
+                    <li class="mega-nav-item" data-index="04">
                         <a href="blog.html" class="mega-nav-link">
                             <span class="link-text">Blog</span>
                             <span class="link-bg">Blog</span>
                         </a>
                     </li>
-                    <li class="mega-nav-item" data-index="04">
+                    <li class="mega-nav-item" data-index="05">
                         <a href="faqs.html" class="mega-nav-link">
                             <span class="link-text">FAQs</span>
                             <span class="link-bg">FAQs</span>
@@ -110,7 +119,7 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="nav-link cta-link">Book Now</a></li>
             </ul>
-            <button class="mobile-toggle" id="mobileToggle">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
                 <span></span>
                 <span></span>
             </button>
@@ -119,9 +128,12 @@
         <div class="mobile-menu" id="mobileMenu">
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="services-detail.html">Services</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="mobile-cta">Book Now</a></li>
             </ul>
@@ -333,63 +345,229 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
+        <!-- Google Reviews Section -->
+        <section class="reviews-section" id="reviews">
             <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <span class="section-label reveal-text">Get In Touch</span>
-                        <h2 class="section-title reveal-text">Ready to <em>Transform</em> Your Vehicle?</h2>
-                        <p class="contact-intro reveal-text">Ready to get your vehicle looking its best? Book your appointment through our online system or give us a call!</p>
-                        <div class="contact-details">
-                            <div class="detail-item reveal-text">
-                                <div class="detail-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="detail-label">Phone</span>
-                                    <span class="detail-value">(916) 583-8532</span>
-                                </div>
+                <div class="section-header center">
+                    <span class="section-label reveal-text">Customer Reviews</span>
+                    <h2 class="section-title reveal-text">What Our <em>Customers</em> Say</h2>
+                    <p class="section-subtitle reveal-text">Don't just take our word for it - hear from our satisfied customers</p>
+                </div>
+                
+                <!-- Reviews Rating Summary -->
+                <div class="reviews-header reveal-card">
+                    <div class="reviews-rating">
+                        <span class="rating-number">5.0</span>
+                        <div class="rating-stars">★★★★★</div>
+                        <span class="rating-count">Based on Google Reviews</span>
+                    </div>
+                </div>
+                
+                <div class="reviews-wrapper reveal-card">
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-stars">★★★★★</div>
+                                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="google-logo">
                             </div>
-                            <div class="detail-item reveal-text">
-                                <div class="detail-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                        <polyline points="22,6 12,13 2,6"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="detail-label">Email</span>
-                                    <span class="detail-value">info@vividautodetails.com</span>
-                                </div>
+                            <p class="review-text">"Absolutely amazing work! My car looks better than when I first bought it. The attention to detail is incredible. Erik and his team are true professionals. Highly recommend Vivid Auto Details!"</p>
+                            <div class="review-author">
+                                <span class="author-name">John M.</span>
+                                <span class="review-date">2 weeks ago</span>
                             </div>
-                            <div class="detail-item reveal-text">
-                                <div class="detail-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="10" r="3"/>
-                                        <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <span class="detail-label">Address</span>
-                                    <span class="detail-value">9918 Kent St Unit 3, Elk Grove, CA 95624</span>
-                                </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-stars">★★★★★</div>
+                                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="google-logo">
+                            </div>
+                            <p class="review-text">"Erik and his team are the best in the business. Got ceramic coating done and it looks phenomenal. Professional, honest, and the results speak for themselves. My go-to for all detailing needs!"</p>
+                            <div class="review-author">
+                                <span class="author-name">Sarah K.</span>
+                                <span class="review-date">1 month ago</span>
+                            </div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="review-stars">★★★★★</div>
+                                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="google-logo">
+                            </div>
+                            <p class="review-text">"Third time using Vivid and they never disappoint. Fast, friendly service and my car always comes out looking brand new. Best detail shop in Sacramento area. Worth every penny!"</p>
+                            <div class="review-author">
+                                <span class="author-name">Mike R.</span>
+                                <span class="review-date">3 weeks ago</span>
                             </div>
                         </div>
                     </div>
-                    <div class="contact-cta-wrap reveal-card">
-                        <h3>Book Your Appointment</h3>
-                        <p>Schedule your detail online through our booking system. Quick, easy, and convenient.</p>
-                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary btn-large">
-                            <span>Book Now</span>
-                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                        <div class="contact-hours">
-                            <h4>Business Hours</h4>
-                            <p>Monday - Saturday: 9am - 7pm</p>
-                            <p>Sunday: Closed</p>
+                </div>
+                <div class="reviews-cta">
+                    <a href="https://www.google.com/search?q=vivid+auto+details+elk+grove+reviews" target="_blank" class="btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <span>View All Reviews</span>
+                    </a>
+                    <a href="https://g.page/r/vivid-auto-details/review" target="_blank" class="btn-primary">
+                        <span>Leave a Review</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-header">
+                    <span class="section-label reveal-text">Get In Touch</span>
+                    <h2 class="section-title reveal-text">Ready to <em>Transform</em> Your Vehicle?</h2>
+                    <p class="contact-intro reveal-text">Book your appointment online or request a custom quote for your specific needs.</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <!-- Contact Info Column -->
+                    <div class="contact-info reveal-card">
+                        <div class="contact-card">
+                            <h3>Contact Information</h3>
+                            <div class="contact-details">
+                                <a href="tel:+19165838532" class="detail-item">
+                                    <div class="detail-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/>
+                                        </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Phone</span>
+                                        <span class="detail-value">(916) 583-8532</span>
+                                    </div>
+                                </a>
+                                <a href="mailto:info@vividautodetails.com" class="detail-item">
+                                    <div class="detail-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                            <polyline points="22,6 12,13 2,6"/>
+                                        </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Email</span>
+                                        <span class="detail-value">info@vividautodetails.com</span>
+                                    </div>
+                                </a>
+                                <a href="https://maps.google.com/?q=9918+Kent+St+Unit+3+Elk+Grove+CA+95624" target="_blank" class="detail-item">
+                                    <div class="detail-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="10" r="3"/>
+                                            <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Address</span>
+                                        <span class="detail-value">9918 Kent St Unit 3<br>Elk Grove, CA 95624</span>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="contact-hours">
+                                <h4>Business Hours</h4>
+                                <div class="hours-grid">
+                                    <span>Monday - Saturday</span>
+                                    <span>9:00 AM - 7:00 PM</span>
+                                    <span>Sunday</span>
+                                    <span>Closed</span>
+                                </div>
+                            </div>
+                            
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary btn-block">
+                                <span>Book Online Now</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quote Form Column -->
+                    <div class="contact-form-wrap reveal-card">
+                        <h3>Request a Quote</h3>
+                        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                        
+                        <form class="quote-form" id="quoteForm" data-google-script="https://script.google.com/macros/s/AKfycbxgRc77wWAxJjbwOTganWtjko5s-lsVmZSsDi0xNRYe37KWz4oVCU_g0dq8uPtkzcI/exec">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle">Vehicle (Year, Make, Model) *</label>
+                                <input type="text" id="vehicle" name="vehicle" placeholder="e.g. 2023 BMW M4" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service Interested In *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="exterior">Exterior Detail</option>
+                                    <option value="interior">Interior Detail</option>
+                                    <option value="full">Full Detail</option>
+                                    <option value="paint-correction">Paint Correction</option>
+                                    <option value="ceramic">Ceramic Coating</option>
+                                    <option value="ppf">Paint Protection Film (PPF)</option>
+                                    <option value="window-tint">Window Tinting</option>
+                                    <option value="overnight">Overnight Detail</option>
+                                    <option value="other">Other / Not Sure</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Additional Details</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your vehicle's condition, specific concerns, or any questions you have..."></textarea>
+                            </div>
+                            
+                            <!-- Honeypot field for spam protection - hidden from real users -->
+                            <div class="form-group" style="position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            
+                            <button type="submit" class="btn-submit" id="submitBtn">
+                                <span>Send Quote Request</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                                </svg>
+                            </button>
+                            
+                            <p class="form-note">* Required fields. We respect your privacy and will never share your information.</p>
+                        </form>
+                        
+                        <!-- Success Message (hidden by default) -->
+                        <div class="form-success" id="formSuccess" style="display: none;">
+                            <div class="success-checkmark">
+                                <div class="check-icon">
+                                    <span class="icon-line line-tip"></span>
+                                    <span class="icon-line line-long"></span>
+                                    <div class="icon-circle"></div>
+                                    <div class="icon-fix"></div>
+                                </div>
+                            </div>
+                            <h4>Request Sent Successfully!</h4>
+                            <p>Thank you for your interest in Vivid Auto Details. We've received your quote request and will get back to you within 24 hours.</p>
+                            <p class="success-note">A confirmation has been sent to your email.</p>
+                            <a href="tel:+19165838532" class="btn-secondary">
+                                <span>Need Faster Response? Call Us</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -420,9 +598,11 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>

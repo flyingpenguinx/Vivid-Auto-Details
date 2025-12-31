@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <title>FAQs | Vivid Auto Details</title>
+    <meta name="description" content="Frequently asked questions about Vivid Auto Details services, pricing, booking, and aftercare for ceramic coating, PPF, and detailing.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="no-curtain">
     <!-- Full Screen Navigation Overlay -->
     <nav class="mega-nav" id="megaNav">
         <button class="mega-nav-close" id="megaNavClose" aria-label="Close menu">
@@ -35,18 +38,24 @@
                         </a>
                     </li>
                     <li class="mega-nav-item" data-index="02">
+                        <a href="services-detail.html" class="mega-nav-link">
+                            <span class="link-text">Services</span>
+                            <span class="link-bg">Services</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="03">
                         <a href="gallery.html" class="mega-nav-link">
                             <span class="link-text">Gallery</span>
                             <span class="link-bg">Gallery</span>
                         </a>
                     </li>
-                    <li class="mega-nav-item" data-index="03">
+                    <li class="mega-nav-item" data-index="04">
                         <a href="blog.html" class="mega-nav-link">
                             <span class="link-text">Blog</span>
                             <span class="link-bg">Blog</span>
                         </a>
                     </li>
-                    <li class="mega-nav-item" data-index="04">
+                    <li class="mega-nav-item" data-index="05">
                         <a href="faqs.html" class="mega-nav-link">
                             <span class="link-text">FAQs</span>
                             <span class="link-bg">FAQs</span>
@@ -104,11 +113,12 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html?skipIntro=true">Home</a></li>
+                <li><a href="services-detail.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faqs.html" class="active">FAQs</a></li>
+                <li><a href="index.html?skipIntro=true#contact">Contact</a></li>
                 <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="mobile-cta">Book Now</a></li>
             </ul>
         </div>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>Our Services | Vivid Auto Details</title>
+    <meta name="description" content="Professional auto detailing services in Elk Grove. Interior detailing, exterior polish, ceramic coating, PPF, and paint correction.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="no-curtain">
+    <!-- Full Screen Navigation Overlay -->
+    <nav class="mega-nav" id="megaNav">
+        <button class="mega-nav-close" id="megaNavClose" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="nav-background">
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+            <div class="nav-bg-slice"></div>
+        </div>
+        <div class="nav-content">
+            <div class="nav-main">
+                <ul class="mega-nav-links">
+                    <li class="mega-nav-item" data-index="01">
+                        <a href="index.html?skipIntro=true" class="mega-nav-link">
+                            <span class="link-text">Home</span>
+                            <span class="link-bg">Home</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="02">
+                        <a href="services.html" class="mega-nav-link">
+                            <span class="link-text">Services</span>
+                            <span class="link-bg">Services</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="03">
+                        <a href="gallery.html" class="mega-nav-link">
+                            <span class="link-text">Gallery</span>
+                            <span class="link-bg">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="04">
+                        <a href="blog.html" class="mega-nav-link">
+                            <span class="link-text">Blog</span>
+                            <span class="link-bg">Blog</span>
+                        </a>
+                    </li>
+                    <li class="mega-nav-item" data-index="05">
+                        <a href="faqs.html" class="mega-nav-link">
+                            <span class="link-text">FAQs</span>
+                            <span class="link-bg">FAQs</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <div class="nav-info">
+                    <div class="info-block">
+                        <span class="info-label">Phone</span>
+                        <span class="info-value">(916) 583-8532</span>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">info@vividautodetails.com</span>
+                    </div>
+                </div>
+                <div class="nav-social">
+                    <a href="https://www.instagram.com/vivid.autodetails/" target="_blank">IG</a>
+                    <a href="https://www.yelp.com/biz/vivid-auto-details-elk-grove" target="_blank">YELP</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navigation -->
+    <header class="header header-dark" id="header">
+        <nav class="nav">
+            <button class="menu-trigger" id="menuTrigger">
+                <div class="trigger-box">
+                    <span class="trigger-line"></span>
+                    <span class="trigger-line"></span>
+                </div>
+            </button>
+            <ul class="nav-left">
+                <li><a href="index.html?skipIntro=true" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="index.html?skipIntro=true#about" class="nav-link">About</a></li>
+            </ul>
+            <a href="index.html?skipIntro=true" class="nav-center">
+                <img src="images/logo.jpg" alt="Vivid Auto Details" class="nav-logo">
+                <span class="nav-brand">VIVID</span>
+            </a>
+            <ul class="nav-right">
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="index.html?skipIntro=true#contact" class="nav-link">Contact</a></li>
+                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="nav-link cta-link">Book Now</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html?skipIntro=true">Home</a></li>
+                <li><a href="services-detail.html">Services</a></li>
+                <li><a href="index.html?skipIntro=true#about">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html?skipIntro=true#reviews">Reviews</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="index.html?skipIntro=true#contact">Contact</a></li>
+                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="mobile-cta">Book Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="page-hero services-hero">
+            <div class="page-hero-bg">
+                <img src="images/hero.jpg" alt="Auto Detailing Services">
+                <div class="page-hero-overlay"></div>
+            </div>
+            <div class="container">
+                <span class="page-label">What We Offer</span>
+                <h1 class="page-title">Our <em>Services</em></h1>
+                <p class="page-subtitle">Professional detailing services tailored to your vehicle's needs. From basic washes to complete paint protection.</p>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="services-detail-section">
+            <div class="container">
+                <!-- Exterior Detail -->
+                <div class="service-detail-card" id="exterior">
+                    <div class="service-detail-content">
+                        <div class="service-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h2>Exterior Detail</h2>
+                        <p class="service-detail-intro">Our exterior detailing service brings back the showroom shine to your vehicle's exterior with meticulous attention to every surface.</p>
+                        <div class="service-detail-features">
+                            <h4>What's Included:</h4>
+                            <ul>
+                                <li>Deep wheel cleaning & tire dressing</li>
+                                <li>Foam prewash & hand wash</li>
+                                <li>Claybar treatment for smooth paint</li>
+                                <li>3-6 month paint sealant application</li>
+                                <li>Streak-free glass cleaning</li>
+                                <li>Trim & plastic restoration</li>
+                                <li>Door jambs cleaned</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                                <span>Book Exterior Detail</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interior Detail -->
+                <div class="service-detail-card" id="interior">
+                    <div class="service-detail-content">
+                        <div class="service-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </div>
+                        <h2>Interior Detail</h2>
+                        <p class="service-detail-intro">Transform your vehicle's interior into a fresh, sanitized space. We eliminate odors, stains, and bring back that new car feel.</p>
+                        <div class="service-detail-features">
+                            <h4>What's Included:</h4>
+                            <ul>
+                                <li>Steam cleaning & sanitization</li>
+                                <li>Carpet & upholstery extraction</li>
+                                <li>Odor elimination treatment</li>
+                                <li>Leather cleaning & conditioning</li>
+                                <li>Dashboard & trim cleaning</li>
+                                <li>Air vent cleaning</li>
+                                <li>Complete vacuum & wipe down</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                                <span>Book Interior Detail</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Detail Package -->
+                <div class="service-detail-card featured" id="full-detail">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-detail-content">
+                        <div class="service-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h2>Full Detail Package</h2>
+                        <p class="service-detail-intro">The ultimate refresh for your vehicle. Our most popular service combines comprehensive interior and exterior detailing for complete transformation.</p>
+                        <div class="service-detail-features">
+                            <h4>What's Included:</h4>
+                            <ul>
+                                <li>Complete exterior detail service</li>
+                                <li>Complete interior detail service</li>
+                                <li>Engine bay cleaning (upon request)</li>
+                                <li>Premium paint sealant</li>
+                                <li>Leather protection treatment</li>
+                                <li>Glass rain repellent coating</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                                <span>Book Full Detail</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ceramic Coating -->
+                <div class="service-detail-card" id="ceramic">
+                    <div class="service-detail-content">
+                        <div class="service-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h2>Ceramic Coating</h2>
+                        <p class="service-detail-intro">Long-term paint protection that delivers high gloss, incredible water beading, and easy cleaning for 2-8 years with proper care.</p>
+                        <div class="service-detail-features">
+                            <h4>Benefits:</h4>
+                            <ul>
+                                <li>2-8 years of protection</li>
+                                <li>Superior hydrophobic properties</li>
+                                <li>Enhanced gloss & depth</li>
+                                <li>UV protection</li>
+                                <li>Chemical resistance</li>
+                                <li>Easier maintenance & cleaning</li>
+                                <li>Minor scratch resistance</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-note">
+                            <strong>Note:</strong> Paint correction is recommended before ceramic coating application for best results.
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                                <span>Book Ceramic Coating</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paint Correction -->
+                <div class="service-detail-card" id="paint-correction">
+                    <div class="service-detail-content">
+                        <div class="service-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </div>
+                        <h2>Paint Correction</h2>
+                        <p class="service-detail-intro">Restore your paint to showroom condition by removing swirls, scratches, and oxidation through professional polishing.</p>
+                        <div class="service-detail-features">
+                            <h4>Service Levels:</h4>
+                            <ul>
+                                <li><strong>Paint Enhancement:</strong> 20-30% defect removal</li>
+                                <li><strong>1-Step Correction:</strong> 50-60% defect removal</li>
+                                <li><strong>2-Step Correction:</strong> 70-95% defect removal</li>
+                                <li>Removes swirl marks & light scratches</li>
+                                <li>Eliminates water spots & oxidation</li>
+                                <li>Restores paint clarity & depth</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                                <span>Book Paint Correction</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paint Protection Film -->
+                <div class="service-detail-card" id="ppf">
+                    <div class="service-detail-content">
+                        <div class="service-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M12 8v4M12 16h.01"/>
+                            </svg>
+                        </div>
+                        <h2>Paint Protection Film (PPF)</h2>
+                        <p class="service-detail-intro">Nearly invisible body armor for your car's finish. The ultimate protection against rock chips, scratches, and road debris.</p>
+                        <div class="service-detail-features">
+                            <h4>Benefits:</h4>
+                            <ul>
+                                <li>Self-healing technology</li>
+                                <li>Rock chip & debris protection</li>
+                                <li>UV & stain resistance</li>
+                                <li>10-year warranty options</li>
+                                <li>Virtually invisible finish</li>
+                                <li>Custom coverage options available</li>
+                                <li>Full front, partial, or track pack</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                                <span>Book PPF Install</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Window Tint -->
+                <div class="service-detail-card" id="tint">
+                    <div class="service-detail-content">
+                        <div class="service-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h2>Window Tint</h2>
+                        <p class="service-detail-intro">Keep it cool, clean, and protected. Professional window tinting for comfort, privacy, and UV protection.</p>
+                        <div class="service-detail-features">
+                            <h4>Benefits:</h4>
+                            <ul>
+                                <li>Cuts heat by up to 60%</li>
+                                <li>Blocks 99% of harmful UV rays</li>
+                                <li>Increased privacy & security</li>
+                                <li>Sleek custom finish</li>
+                                <li>Reduces glare while driving</li>
+                                <li>Protects interior from fading</li>
+                                <li>Multiple shade options available</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                                <span>Book Window Tint</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overnight Service -->
+                <div class="service-detail-card" id="overnight">
+                    <div class="service-detail-content">
+                        <div class="service-detail-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h2>Overnight Detail Service</h2>
+                        <p class="service-detail-intro">Detailing made to fit your schedule. Drop off in the evening, pick up in the morning — your car is ready when you are.</p>
+                        <div class="service-detail-features">
+                            <h4>How It Works:</h4>
+                            <ul>
+                                <li>Late evening drop-off available</li>
+                                <li>Early morning pickup</li>
+                                <li>No disruption to your day</li>
+                                <li>Available for most services</li>
+                                <li>Secure overnight storage</li>
+                                <li>Perfect for busy schedules</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
+                                <span>Book Overnight Service</span>
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Form Section -->
+        <section class="quote-section" id="quote">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-label">Get Started</span>
+                    <h2 class="section-title">Request a <em>Quote</em></h2>
+                    <p class="section-subtitle">Fill out the form below and we'll get back to you with a custom quote for your vehicle.</p>
+                </div>
+                <div class="quote-form-wrapper">
+                    <form class="quote-form" id="quoteForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(916) 555-1234">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="john@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="preferred-contact">Preferred Contact Method</label>
+                                <select id="preferred-contact" name="preferred-contact">
+                                    <option value="phone">Phone Call</option>
+                                    <option value="text">Text Message</option>
+                                    <option value="email">Email</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vehicle-year">Vehicle Year *</label>
+                                <input type="text" id="vehicle-year" name="vehicle-year" required placeholder="2024">
+                            </div>
+                            <div class="form-group">
+                                <label for="vehicle-make">Make *</label>
+                                <input type="text" id="vehicle-make" name="vehicle-make" required placeholder="Toyota">
+                            </div>
+                            <div class="form-group">
+                                <label for="vehicle-model">Model *</label>
+                                <input type="text" id="vehicle-model" name="vehicle-model" required placeholder="Camry">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle-color">Vehicle Color</label>
+                            <input type="text" id="vehicle-color" name="vehicle-color" placeholder="Black">
+                        </div>
+                        <div class="form-group">
+                            <label>Services Interested In *</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="exterior-detail">
+                                    <span>Exterior Detail</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="interior-detail">
+                                    <span>Interior Detail</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="full-detail">
+                                    <span>Full Detail Package</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="ceramic-coating">
+                                    <span>Ceramic Coating</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="paint-correction">
+                                    <span>Paint Correction</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="ppf">
+                                    <span>Paint Protection Film</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="window-tint">
+                                    <span>Window Tint</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="services" value="overnight">
+                                    <span>Overnight Service</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about the current condition of your vehicle, any specific concerns, or questions you have..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-large btn-submit">
+                            <span>Submit Quote Request</span>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Vehicle?</h2>
+                    <p>Book your appointment online or give us a call. We're here to help!</p>
+                    <div class="cta-buttons">
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary btn-large">
+                            <span>Book Online</span>
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="tel:9165838532" class="btn-secondary">
+                            <span>Call (916) 583-8532</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html?skipIntro=true" class="footer-logo">
+                        <img src="images/logo.jpg" alt="Vivid">
+                        <span>VIVID</span>
+                    </a>
+                    <p>Premium auto detailing in Elk Grove, CA. In-shop and mobile services for the Greater Sacramento area.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/vivid.autodetails/" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.yelp.com/biz/vivid-auto-details-elk-grove" target="_blank" aria-label="Yelp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.14 11.18L9.24 2.77C9.09 2.32 8.58 2.1 8.14 2.28L4.24 3.93C3.8 4.11 3.58 4.62 3.76 5.06L6.66 13.47C6.84 13.91 7.35 14.13 7.79 13.95L11.69 12.3C12.13 12.12 12.32 11.62 12.14 11.18M21.79 15.44L18.14 13.29C17.74 13.06 17.22 13.19 16.99 13.59L14.84 17.24C14.61 17.64 14.74 18.16 15.14 18.39L18.79 20.54C19.19 20.77 19.71 20.64 19.94 20.24L22.09 16.59C22.32 16.19 22.19 15.67 21.79 15.44M16.99 10.41L18.14 10.71C18.58 10.82 19.03 10.56 19.14 10.12L20.29 5.89C20.4 5.45 20.14 5 19.7 4.89L15.47 3.74C15.03 3.63 14.58 3.89 14.47 4.33L13.32 8.56C13.21 9 13.47 9.45 13.91 9.56L14.91 9.82C14.91 9.82 15.36 9.96 15.8 10.08C16.24 10.2 16.99 10.41 16.99 10.41M10.35 14.38L6.12 15.53C5.68 15.64 5.42 16.09 5.53 16.53L6.68 20.76C6.79 21.2 7.24 21.46 7.68 21.35L11.91 20.2C12.35 20.09 12.61 19.64 12.5 19.2L11.35 14.97C11.24 14.53 10.79 14.27 10.35 14.38"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html?skipIntro=true">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#exterior">Exterior Detail</a></li>
+                        <li><a href="#interior">Interior Detail</a></li>
+                        <li><a href="#paint-correction">Paint Correction</a></li>
+                        <li><a href="#ceramic">Ceramic Coating</a></li>
+                        <li><a href="#ppf">Paint Protection Film</a></li>
+                        <li><a href="#tint">Window Tint</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hours</h4>
+                    <ul class="hours">
+                        <li>Mon - Sat: 9am - 7pm</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vivid Auto Details. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
