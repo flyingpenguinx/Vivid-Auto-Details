@@ -479,6 +479,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            // Check if at least one service is selected
+            const selectedServices = quoteForm.querySelectorAll('input[name="services"]:checked');
+            if (selectedServices.length === 0) {
+                alert('Please select at least one service you are interested in.');
+                return;
+            }
+            
             const submitBtn = quoteForm.querySelector('.btn-submit');
             const originalText = submitBtn.innerHTML;
             
@@ -491,13 +498,20 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 const scriptUrl = quoteForm.dataset.googleScript;
                 
+                // Get selected services from checkboxes
+                const selectedServices = [];
+                const serviceCheckboxes = quoteForm.querySelectorAll('input[name="services"]:checked');
+                serviceCheckboxes.forEach(checkbox => {
+                    selectedServices.push(checkbox.value);
+                });
+                
                 const formData = {
                     firstName: quoteForm.querySelector('#firstName').value.trim(),
                     lastName: quoteForm.querySelector('#lastName').value.trim(),
                     email: quoteForm.querySelector('#email').value.trim(),
                     phone: quoteForm.querySelector('#phone').value.trim(),
                     vehicle: quoteForm.querySelector('#vehicle').value.trim(),
-                    service: quoteForm.querySelector('#service').value,
+                    services: selectedServices, // Changed from single 'service' to array 'services'
                     message: quoteForm.querySelector('#message').value.trim(),
                     timestamp: new Date().toISOString()
                 };

@@ -516,19 +516,54 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="service">Service Interested In *</label>
-                                <select id="service" name="service" required>
-                                    <option value="">Select a service...</option>
-                                    <option value="exterior">Exterior Detail</option>
-                                    <option value="interior">Interior Detail</option>
-                                    <option value="full">Full Detail</option>
-                                    <option value="paint-correction">Paint Correction</option>
-                                    <option value="ceramic">Ceramic Coating</option>
-                                    <option value="ppf">Paint Protection Film (PPF)</option>
-                                    <option value="window-tint">Window Tinting</option>
-                                    <option value="overnight">Overnight Detail</option>
-                                    <option value="other">Other / Not Sure</option>
-                                </select>
+                                <label for="services">Services Interested In * <span class="checkbox-note">(Select all that apply)</span></label>
+                                <div class="checkbox-group" id="services">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="exterior">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Exterior Detail</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="interior">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Interior Detail</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="full">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Full Detail</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="paint-correction">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Paint Correction</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="ceramic">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Ceramic Coating</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="ppf">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Paint Protection Film (PPF)</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="window-tint">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Window Tinting</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="overnight">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Overnight Detail</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="services" value="other">
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Other / Not Sure</span>
+                                    </label>
+                                </div>
                             </div>
                             
                             <div class="form-group">
