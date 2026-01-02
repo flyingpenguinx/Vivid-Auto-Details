@@ -1082,6 +1082,14 @@ section {
     transition: all 0.3s ease;
 }
 
+/* Override for checkbox group - labels need to be clickable */
+.form-group > label:first-child {
+    position: static;
+    pointer-events: auto;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -1138,6 +1146,7 @@ section {
     margin-top: 0.5rem;
 }
 
+.form-group .checkbox-item,
 .checkbox-item {
     display: flex;
     align-items: center;
@@ -1149,8 +1158,11 @@ section {
     cursor: pointer;
     transition: all 0.3s ease;
     user-select: none;
+    pointer-events: auto !important;
+    position: relative;
 }
 
+.form-group .checkbox-item:hover,
 .checkbox-item:hover {
     background: var(--gray-700);
     border-color: var(--red);
