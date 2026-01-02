@@ -502,24 +502,30 @@ document.addEventListener('DOMContentLoaded', function() {
                     timestamp: new Date().toISOString()
                 };
                 
-                await fetch(scriptUrl, {
+                const response = await fetch(scriptUrl, {
                     method: 'POST',
-                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
                 
-                // Show success
-                quoteForm.style.display = 'none';
-                if (formSuccess) {
-                    formSuccess.style.display = 'block';
-                    if (isMobile) {
-                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Show success only if email was actually sent
+                    quoteForm.style.display = 'none';
+                    if (formSuccess) {
+                        formSuccess.style.display = 'block';
+                        if (isMobile) {
+                            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
                     }
+                } else {
+                    throw new Error(result.error || 'Server returned an error');
                 }
                 
             } catch (error) {
                 formSubmitted = false;
+                console.error('Form submission error:', error);
                 alert('There was an error sending your request. Please try again or call us directly at (916) 583-8532.');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
