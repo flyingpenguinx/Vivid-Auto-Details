@@ -502,13 +502,64 @@ document.addEventListener('DOMContentLoaded', function() {
                     timestamp: new Date().toISOString()
                 };
                 
-                const response = await fetch(scriptUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
+                console.log('Submitting form data:', formData);
+                console.log('Script URL:', scriptUrl);
                 
-                const result = await response.json();
+                // Try multiple approaches to ensure compatibility
+                let response;
+                let result;
+                
+                try {
+                    // First attempt: JSON POST
+                    response = await fetch(scriptUrl, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData),
+                        redirect: 'follow'
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    const responseText = await response.text();
+                    console.log('Raw response:', responseText);
+                    
+                    result = JSON.parse(responseText);
+                    
+                } catch (jsonError) {
+                    console.log('JSON POST failed, trying form data...', jsonError);
+                    
+                    // Fallback: Form data POST
+                    const formDataObj = new FormData();
+                    Object.keys(formData).forEach(key => {
+                        formDataObj.append(key, formData[key]);
+                    });
+                    
+                    response = await fetch(scriptUrl, {
+                        method: 'POST',
+                        body: formDataObj,
+                        redirect: 'follow'
+                    });
+                    
+                    const responseText = await response.text();
+                    console.log('Form data response:', responseText);
+                    
+                    try {
+                        result = JSON.parse(responseText);
+                    } catch (parseError) {
+                        // If we can't parse JSON, assume success if no obvious error
+                        if (responseText.includes('success') || responseText.includes('sent')) {
+                            result = { success: true };
+                        } else {
+                            throw new Error('Invalid response format');
+                        }
+                    }
+                }
+                
+                console.log('Final result:', result);
                 
                 if (result.success) {
                     // Show success only if email was actually sent
