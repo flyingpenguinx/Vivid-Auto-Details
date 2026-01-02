@@ -591,7 +591,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (error) {
                 formSubmitted = false;
                 console.error('Form submission error:', error);
-                alert('There was an error sending your request. Please try again or call us directly at (916) 583-8532.');
+                alert('There was an error sending your request. Please try again, click "Book Appointment" to schedule online, or send us an email at vividautodetailsca@gmail.com');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
