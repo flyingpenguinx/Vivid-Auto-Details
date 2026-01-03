@@ -144,9 +144,15 @@
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-media">
-                <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/hero.jpg">
+                <!-- Desktop Video -->
+                <video class="hero-video hero-video-desktop" autoplay muted loop playsinline preload="auto" poster="images/hero.jpg" disablePictureInPicture>
                     <source src="images/hero-video.mp4" type="video/mp4">
                 </video>
+                <!-- Mobile Video -->
+                <video class="hero-video hero-video-mobile" autoplay muted loop playsinline preload="auto" poster="images/hero.jpg" disablePictureInPicture>
+                    <source src="images/hero-video%20mobile.mp4" type="video/mp4">
+                </video>
+                <img src="images/hero.jpg" alt="Premium Auto Detailing" class="hero-img">
                 <div class="hero-overlay"></div>
             </div>
             <div class="hero-container">

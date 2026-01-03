@@ -385,6 +385,17 @@ img {
     object-fit: cover;
     filter: brightness(0.35);
     display: block;
+    position: absolute;
+    inset: 0;
+}
+
+/* Desktop video visible by default, mobile hidden */
+.hero-video-desktop {
+    display: block;
+}
+
+.hero-video-mobile {
+    display: none;
 }
 
 .hero-img {
@@ -392,6 +403,9 @@ img {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.35);
+    display: none;
+    position: absolute;
+    inset: 0;
 }
 
 .hero-overlay {
@@ -1476,9 +1490,20 @@ section {
         );
     }
     
-    .hero-video,
-    .hero-img {
+    /* Show mobile video, hide desktop video */
+    .hero-video-desktop {
+        display: none;
+    }
+    
+    .hero-video-mobile {
+        display: block;
         filter: brightness(0.50);
+    }
+    
+    .hero-img {
+        display: block;
+        filter: brightness(0.50);
+        z-index: -1;
     }
     
     .form-row {

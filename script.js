@@ -5,6 +5,44 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ============================================
+    // HERO VIDEO AUTOPLAY (Mobile & Desktop)
+    // ============================================
+    const heroVideos = document.querySelectorAll('.hero-video');
+    const heroImg = document.querySelector('.hero-img');
+    
+    if (heroVideos.length > 0) {
+        // Force all videos to play (CSS will show/hide the right one)
+        const playVideos = function() {
+            heroVideos.forEach(video => {
+                video.play().then(() => {
+                    // Video is playing, hide fallback image
+                    if (heroImg) heroImg.style.opacity = '0';
+                }).catch((error) => {
+                    // Video failed to play, show fallback image
+                    console.log('Video autoplay failed:', error);
+                    if (heroImg) heroImg.style.opacity = '1';
+                });
+            });
+        };
+        
+        // Try to play immediately
+        playVideos();
+        
+        // Also try on user interaction (for strict browsers)
+        document.addEventListener('touchstart', playVideos, { once: true });
+        document.addEventListener('click', playVideos, { once: true });
+        document.addEventListener('scroll', playVideos, { once: true });
+        
+        // Ensure videos loop properly
+        heroVideos.forEach(video => {
+            video.addEventListener('ended', function() {
+                video.currentTime = 0;
+                video.play();
+            });
+        });
+    }
+
+    // ============================================
     // DETECT DEVICE TYPE
     // ============================================
     const isMobile = window.innerWidth <= 768;
