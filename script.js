@@ -479,6 +479,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
+            // Validate email is provided
+            const emailInput = quoteForm.querySelector('#email');
+            if (!emailInput || !emailInput.value.trim()) {
+                alert('Please enter your email address.');
+                return;
+            }
+            
             // Check if at least one service is selected
             const selectedServices = quoteForm.querySelectorAll('input[name="services"]:checked');
             if (selectedServices.length === 0) {
@@ -499,10 +506,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const scriptUrl = quoteForm.dataset.googleScript;
                 
                 // Get selected services from checkboxes
-                const selectedServices = [];
+                const servicesArray = [];
                 const serviceCheckboxes = quoteForm.querySelectorAll('input[name="services"]:checked');
                 serviceCheckboxes.forEach(checkbox => {
-                    selectedServices.push(checkbox.value);
+                    // Get the display text instead of just the value
+                    const label = checkbox.closest('.checkbox-item').querySelector('.checkbox-text');
+                    servicesArray.push(label ? label.textContent : checkbox.value);
                 });
                 
                 const formData = {
@@ -511,87 +520,41 @@ document.addEventListener('DOMContentLoaded', function() {
                     email: quoteForm.querySelector('#email').value.trim(),
                     phone: quoteForm.querySelector('#phone').value.trim(),
                     vehicle: quoteForm.querySelector('#vehicle').value.trim(),
-                    services: selectedServices, // Changed from single 'service' to array 'services'
+                    services: servicesArray,
                     message: quoteForm.querySelector('#message').value.trim(),
                     timestamp: new Date().toISOString()
                 };
                 
                 console.log('Submitting form data:', formData);
-                console.log('Script URL:', scriptUrl);
                 
-                // Try multiple approaches to ensure compatibility
-                let response;
-                let result;
+                // Use fetch with no-cors mode - this will send the data but we can't read the response
+                // So we'll assume success if no error is thrown
+                await fetch(scriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
                 
-                try {
-                    // First attempt: JSON POST
-                    response = await fetch(scriptUrl, {
-                        method: 'POST',
-                        headers: { 
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData),
-                        redirect: 'follow'
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                // If we get here without error, assume success
+                // (no-cors mode doesn't let us read the response)
+                console.log('Form submitted successfully');
+                
+                // Show success message
+                quoteForm.style.display = 'none';
+                if (formSuccess) {
+                    formSuccess.style.display = 'block';
+                    if (isMobile) {
+                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
-                    
-                    const responseText = await response.text();
-                    console.log('Raw response:', responseText);
-                    
-                    result = JSON.parse(responseText);
-                    
-                } catch (jsonError) {
-                    console.log('JSON POST failed, trying form data...', jsonError);
-                    
-                    // Fallback: Form data POST
-                    const formDataObj = new FormData();
-                    Object.keys(formData).forEach(key => {
-                        formDataObj.append(key, formData[key]);
-                    });
-                    
-                    response = await fetch(scriptUrl, {
-                        method: 'POST',
-                        body: formDataObj,
-                        redirect: 'follow'
-                    });
-                    
-                    const responseText = await response.text();
-                    console.log('Form data response:', responseText);
-                    
-                    try {
-                        result = JSON.parse(responseText);
-                    } catch (parseError) {
-                        // If we can't parse JSON, assume success if no obvious error
-                        if (responseText.includes('success') || responseText.includes('sent')) {
-                            result = { success: true };
-                        } else {
-                            throw new Error('Invalid response format');
-                        }
-                    }
-                }
-                
-                console.log('Final result:', result);
-                
-                if (result.success) {
-                    // Show success only if email was actually sent
-                    quoteForm.style.display = 'none';
-                    if (formSuccess) {
-                        formSuccess.style.display = 'block';
-                        if (isMobile) {
-                            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }
-                    }
-                } else {
-                    throw new Error(result.error || 'Server returned an error');
                 }
                 
             } catch (error) {
                 formSubmitted = false;
                 console.error('Form submission error:', error);
-                alert('There was an error sending your request. Please try again, click "Book Appointment" to schedule online, or send us an email at vividautodetailsca@gmail.com');
+                alert('There was an error sending your request. Please try again or email us directly at vividautodetailsca@gmail.com');
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }
