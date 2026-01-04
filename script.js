@@ -112,10 +112,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (curtainReveal) curtainReveal.remove();
         showAllContent();
     } else if (curtainReveal && !hasNoCurtain && !skipIntro) {
-        // Desktop: Show curtain animation
-        setTimeout(() => curtainReveal.classList.add('open'), 50);
-        setTimeout(removeCurtain, 1500);
-        setTimeout(removeCurtain, 2500); // Failsafe
+        // Desktop: Show curtain animation (original timing)
+        setTimeout(() => curtainReveal.classList.add('open'), 100);
+        setTimeout(removeCurtain, 3000);
+        setTimeout(removeCurtain, 5000); // Failsafe
     } else {
         if (curtainReveal) curtainReveal.remove();
         showAllContent();
