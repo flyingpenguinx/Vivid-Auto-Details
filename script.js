@@ -5,41 +5,82 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ============================================
-    // HERO VIDEO AUTOPLAY - IMMEDIATE (Mobile & Desktop)
-    // ============================================
-    const heroVideos = document.querySelectorAll('.hero-video');
-    const heroImg = document.querySelector('.hero-img');
-    
-    function playHeroVideos() {
-        heroVideos.forEach(video => {
-            // Set attributes to ensure autoplay works
-            video.muted = true;
-            video.playsInline = true;
-            video.play().then(() => {
-                if (heroImg) heroImg.style.opacity = '0';
-            }).catch(() => {
-                if (heroImg) heroImg.style.opacity = '1';
-            });
-        });
-    }
-    
-    // Play videos immediately
-    if (heroVideos.length > 0) {
-        playHeroVideos();
-        // Backup triggers for strict browsers
-        ['touchstart', 'click', 'scroll'].forEach(event => {
-            document.addEventListener(event, playHeroVideos, { once: true, passive: true });
-        });
-    }
-
-    // ============================================
-    // DETECT DEVICE TYPE
+    // DETECT DEVICE TYPE (MUST BE FIRST)
     // ============================================
     const isMobile = window.innerWidth <= 768;
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     // ============================================
-    // CURTAIN REVEAL ANIMATION - FASTER
+    // HERO VIDEO AUTOPLAY - SMART MOBILE HANDLING
+    // ============================================
+    const heroVideoDesktop = document.querySelector('.hero-video-desktop');
+    const heroVideoMobile = document.querySelector('.hero-video-mobile');
+    const heroImg = document.querySelector('.hero-img');
+    
+    // Get the correct video for this device
+    const activeVideo = isMobile ? heroVideoMobile : heroVideoDesktop;
+    
+    function playActiveVideo() {
+        if (!activeVideo) return;
+        
+        // Ensure attributes are set
+        activeVideo.muted = true;
+        activeVideo.playsInline = true;
+        activeVideo.setAttribute('playsinline', '');
+        activeVideo.setAttribute('webkit-playsinline', '');
+        
+        const playPromise = activeVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Video is playing - hide fallback image
+                if (heroImg) heroImg.style.opacity = '0';
+                console.log('Video playing successfully');
+            }).catch((e) => {
+                console.log('Video play failed, will retry on interaction:', e.message);
+            });
+        }
+    }
+    
+    // For mobile: More aggressive autoplay strategy
+    if (isMobile && activeVideo) {
+        // Try immediately
+        playActiveVideo();
+        
+        // Try again after a short delay (after page settles)
+        setTimeout(playActiveVideo, 100);
+        setTimeout(playActiveVideo, 500);
+        setTimeout(playActiveVideo, 1000);
+        
+        // Use IntersectionObserver to play when video is visible
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    playActiveVideo();
+                }
+            });
+        }, { threshold: 0.1 });
+        videoObserver.observe(activeVideo);
+        
+        // Also try on ANY user interaction
+        const interactionEvents = ['touchstart', 'touchend', 'click', 'scroll', 'touchmove'];
+        const onFirstInteraction = () => {
+            playActiveVideo();
+            // Remove all listeners after first successful interaction
+            interactionEvents.forEach(evt => {
+                document.removeEventListener(evt, onFirstInteraction);
+            });
+        };
+        interactionEvents.forEach(evt => {
+            document.addEventListener(evt, onFirstInteraction, { passive: true });
+        });
+        
+    } else if (activeVideo) {
+        // Desktop: Simple autoplay (usually works fine)
+        playActiveVideo();
+    }
+
+    // ============================================
+    // CURTAIN REVEAL ANIMATION - SKIP ON MOBILE
     // ============================================
     const curtainReveal = document.getElementById('curtainReveal');
     const urlParams = new URLSearchParams(window.location.search);
@@ -62,14 +103,19 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => curtainReveal.remove(), 300);
         }
         showAllContent();
+        // Try to play video after curtain is removed
+        playActiveVideo();
     }
 
-    if (curtainReveal && !hasNoCurtain && !skipIntro) {
-        // Faster animation - 1.5s total instead of 3s
+    // Skip curtain on mobile for faster load and better video autoplay
+    if (isMobile) {
+        if (curtainReveal) curtainReveal.remove();
+        showAllContent();
+    } else if (curtainReveal && !hasNoCurtain && !skipIntro) {
+        // Desktop: Show curtain animation
         setTimeout(() => curtainReveal.classList.add('open'), 50);
         setTimeout(removeCurtain, 1500);
-        // Failsafe
-        setTimeout(removeCurtain, 2500);
+        setTimeout(removeCurtain, 2500); // Failsafe
     } else {
         if (curtainReveal) curtainReveal.remove();
         showAllContent();

@@ -1492,12 +1492,14 @@ section {
     
     /* Show mobile video, hide desktop video */
     .hero-video-desktop {
-        display: none;
+        display: none !important;
     }
     
     .hero-video-mobile {
-        display: block;
+        display: block !important;
         filter: brightness(0.50);
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .hero-img {
