@@ -5,40 +5,30 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ============================================
-    // HERO VIDEO AUTOPLAY (Mobile & Desktop)
+    // HERO VIDEO AUTOPLAY - IMMEDIATE (Mobile & Desktop)
     // ============================================
     const heroVideos = document.querySelectorAll('.hero-video');
     const heroImg = document.querySelector('.hero-img');
     
-    if (heroVideos.length > 0) {
-        // Force all videos to play (CSS will show/hide the right one)
-        const playVideos = function() {
-            heroVideos.forEach(video => {
-                video.play().then(() => {
-                    // Video is playing, hide fallback image
-                    if (heroImg) heroImg.style.opacity = '0';
-                }).catch((error) => {
-                    // Video failed to play, show fallback image
-                    console.log('Video autoplay failed:', error);
-                    if (heroImg) heroImg.style.opacity = '1';
-                });
-            });
-        };
-        
-        // Try to play immediately
-        playVideos();
-        
-        // Also try on user interaction (for strict browsers)
-        document.addEventListener('touchstart', playVideos, { once: true });
-        document.addEventListener('click', playVideos, { once: true });
-        document.addEventListener('scroll', playVideos, { once: true });
-        
-        // Ensure videos loop properly
+    function playHeroVideos() {
         heroVideos.forEach(video => {
-            video.addEventListener('ended', function() {
-                video.currentTime = 0;
-                video.play();
+            // Set attributes to ensure autoplay works
+            video.muted = true;
+            video.playsInline = true;
+            video.play().then(() => {
+                if (heroImg) heroImg.style.opacity = '0';
+            }).catch(() => {
+                if (heroImg) heroImg.style.opacity = '1';
             });
+        });
+    }
+    
+    // Play videos immediately
+    if (heroVideos.length > 0) {
+        playHeroVideos();
+        // Backup triggers for strict browsers
+        ['touchstart', 'click', 'scroll'].forEach(event => {
+            document.addEventListener(event, playHeroVideos, { once: true, passive: true });
         });
     }
 
@@ -49,15 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     // ============================================
-    // CURTAIN REVEAL ANIMATION
-    // Shows on every visit unless skipIntro=true or no-curtain class
+    // CURTAIN REVEAL ANIMATION - FASTER
     // ============================================
     const curtainReveal = document.getElementById('curtainReveal');
     const urlParams = new URLSearchParams(window.location.search);
     const skipIntro = urlParams.get('skipIntro') === 'true';
     const hasNoCurtain = document.body.classList.contains('no-curtain');
 
-    // Function to show all content
     function showAllContent() {
         document.querySelectorAll('.reveal-text, .reveal-card').forEach(el => {
             el.classList.add('visible');
@@ -66,48 +54,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Function to remove curtain
     function removeCurtain() {
         if (curtainReveal) {
             curtainReveal.style.opacity = '0';
             curtainReveal.style.visibility = 'hidden';
             curtainReveal.style.pointerEvents = 'none';
-            setTimeout(() => {
-                if (curtainReveal.parentNode) {
-                    curtainReveal.parentNode.removeChild(curtainReveal);
-                }
-            }, 500);
+            setTimeout(() => curtainReveal.remove(), 300);
         }
         showAllContent();
     }
 
-    // Handle curtain animation
     if (curtainReveal && !hasNoCurtain && !skipIntro) {
-        // Play the animation
-        setTimeout(() => {
-            curtainReveal.classList.add('open');
-        }, 100);
-        
-        // Remove curtain after animation completes
-        setTimeout(() => {
-            removeCurtain();
-        }, 3000);
-        
-        // Failsafe - force remove after 5 seconds no matter what
-        setTimeout(() => {
-            if (curtainReveal && curtainReveal.parentNode) {
-                console.log('Failsafe triggered - removing curtain');
-                removeCurtain();
-            }
-        }, 5000);
+        // Faster animation - 1.5s total instead of 3s
+        setTimeout(() => curtainReveal.classList.add('open'), 50);
+        setTimeout(removeCurtain, 1500);
+        // Failsafe
+        setTimeout(removeCurtain, 2500);
     } else {
-        // Skip animation - remove immediately
-        if (curtainReveal) {
-            curtainReveal.style.display = 'none';
-            if (curtainReveal.parentNode) {
-                curtainReveal.parentNode.removeChild(curtainReveal);
-            }
-        }
+        if (curtainReveal) curtainReveal.remove();
         showAllContent();
     }
 
