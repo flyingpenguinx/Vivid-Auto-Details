@@ -408,6 +408,15 @@ img {
     inset: 0;
 }
 
+/* Desktop image hidden by default, mobile image always hidden on desktop */
+.hero-img-desktop {
+    display: none;
+}
+
+.hero-img-mobile {
+    display: none;
+}
+
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -1482,30 +1491,36 @@ section {
     
     /* Enhance mobile hero visibility */
     .hero {
-        background: linear-gradient(
-            to right,
-            rgba(15, 15, 15, 0.75) 0%,
-            rgba(15, 15, 15, 0.2) 60%,
-            rgba(15, 15, 15, 0.45) 100%
-        );
+        background: transparent;
     }
     
-    /* Show mobile video, hide desktop video */
-    .hero-video-desktop {
+    /* Hide ALL videos on mobile - use image only for faster loading */
+    .hero-video-desktop,
+    .hero-video-mobile {
         display: none !important;
     }
     
-    .hero-video-mobile {
-        display: block !important;
-        filter: brightness(0.50);
-        opacity: 1 !important;
-        visibility: visible !important;
+    /* Show mobile-optimized hero image (46KB vs 274KB) */
+    .hero-img-desktop {
+        display: none !important;
     }
     
-    .hero-img {
-        display: block;
-        filter: brightness(0.50);
-        z-index: -1;
+    .hero-img-mobile {
+        display: block !important;
+        filter: brightness(0.55);
+        z-index: 0;
+    }
+    
+    /* Add overlay gradient for better text readability while keeping image visible */
+    .hero-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.3) 40%,
+            rgba(0, 0, 0, 0.4) 70%,
+            rgba(0, 0, 0, 0.6) 100%
+        );
+        z-index: 1;
     }
     
     .form-row {

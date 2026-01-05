@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preload hero image for faster mobile loading -->
+    <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="images/hero-mobile.jpg" fetchpriority="high" media="(max-width: 768px)">
 </head>
 <body>
     <!-- Curtain Reveal Animation -->
@@ -152,7 +155,8 @@
                 <video class="hero-video hero-video-mobile" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="images/hero.jpg" disablePictureInPicture>
                     <source src="images/hero-video%20mobile.mp4" type="video/mp4">
                 </video>
-                <img src="images/hero.jpg" alt="Premium Auto Detailing" class="hero-img">
+                <img src="images/hero.jpg" alt="Premium Auto Detailing" class="hero-img hero-img-desktop" fetchpriority="high" decoding="async">
+                <img src="images/hero-mobile.jpg" alt="Premium Auto Detailing" class="hero-img hero-img-mobile" fetchpriority="high" decoding="async">
                 <div class="hero-overlay"></div>
             </div>
             <div class="hero-container">
@@ -495,7 +499,7 @@
                         <h3>Request a Quote</h3>
                         <p>Fill out the form below and we'll get back to you within 24 hours.</p>
                         
-                        <form class="quote-form" id="quoteForm" data-google-script="https://script.google.com/macros/s/AKfycbxoYj42AK4uBoTjn0Jg80WrLLe9xwet3GM2kb45lqoZGzHPb4MyUonUfdcCBLEXB6Uq/exec">
+                        <form class="quote-form" id="quoteForm" data-google-script="https://script.google.com/macros/s/AKfycbzmZHmiwRoL9ZHxpDMhfreazG55qm6PCuLMh6M5rWZgCSrxTrC2E2kT734tz6eoQyX8/exec">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="firstName">First Name *</label>
