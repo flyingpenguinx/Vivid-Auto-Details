@@ -410,7 +410,7 @@
                     <p class="section-subtitle">Fill out the form below and we'll get back to you with a custom quote for your vehicle.</p>
                 </div>
                 <div class="quote-form-wrapper">
-                    <form class="quote-form" id="quoteForm">
+                    <form class="quote-form" id="quoteForm" data-google-script="https://script.google.com/macros/s/AKfycbzmZHmiwRoL9ZHxpDMhfreazG55qm6PCuLMh6M5rWZgCSrxTrC2E2kT734tz6eoQyX8/exec" data-quote-endpoint="https://script.google.com/macros/s/AKfycbzmZHmiwRoL9ZHxpDMhfreazG55qm6PCuLMh6M5rWZgCSrxTrC2E2kT734tz6eoQyX8/exec" data-quote-mode="no-cors" data-quote-variant="services-page">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
@@ -494,11 +494,30 @@
                             <label for="message">Additional Details</label>
                             <textarea id="message" name="message" rows="4" placeholder="Tell us about the current condition of your vehicle, any specific concerns, or questions you have..."></textarea>
                         </div>
+                        <div class="form-group" style="position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <button type="submit" class="btn-primary btn-large btn-submit">
                             <span>Submit Quote Request</span>
                             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </button>
                     </form>
+                    <div class="form-success" style="display: none;">
+                        <div class="success-checkmark">
+                            <div class="check-icon">
+                                <span class="icon-line line-tip"></span>
+                                <span class="icon-line line-long"></span>
+                                <div class="icon-circle"></div>
+                                <div class="icon-fix"></div>
+                            </div>
+                        </div>
+                        <h4>Request Sent Successfully!</h4>
+                        <p>Thank you for your interest in Vivid Auto Details. We've received your quote request and will get back to you within 24 hours.</p>
+                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-secondary">
+                            <span>Book Online Now</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

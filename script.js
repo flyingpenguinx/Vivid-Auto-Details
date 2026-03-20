@@ -508,97 +508,186 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     // QUOTE FORM HANDLING
     // ============================================
-    const quoteForm = document.getElementById('quoteForm');
-    const formSuccess = document.getElementById('formSuccess');
-    let formSubmitted = false;
-    
-    if (quoteForm) {
+    const quoteForms = document.querySelectorAll('.quote-form');
+
+    function getFieldValue(form, selector) {
+        const field = form.querySelector(selector);
+        return field ? field.value.trim() : '';
+    }
+
+    function getSelectedServiceLabels(form) {
+        const services = [];
+        const checkedBoxes = form.querySelectorAll('input[name="services"]:checked');
+
+        checkedBoxes.forEach((checkbox) => {
+            const label = checkbox.closest('label');
+            const spanLabels = label ? Array.from(label.querySelectorAll('span')) : [];
+            const displayLabel = spanLabels
+                .map((span) => span.textContent.trim())
+                .filter(Boolean)
+                .pop();
+
+            services.push(displayLabel || checkbox.value);
+        });
+
+        return services;
+    }
+
+    function buildLegacyQuotePayload(form) {
+        const fullName = getFieldValue(form, '#name');
+        const nameParts = fullName ? fullName.split(/\s+/).filter(Boolean) : [];
+        const firstName = getFieldValue(form, '#firstName') || (nameParts[0] || '');
+        const lastName = getFieldValue(form, '#lastName') || (nameParts.slice(1).join(' ') || '');
+        const vehicleYear = getFieldValue(form, '#vehicle-year');
+        const vehicleMake = getFieldValue(form, '#vehicle-make');
+        const vehicleModel = getFieldValue(form, '#vehicle-model');
+
+        return {
+            firstName,
+            lastName,
+            email: getFieldValue(form, '#email'),
+            phone: getFieldValue(form, '#phone'),
+            vehicle: getFieldValue(form, '#vehicle') || [vehicleYear, vehicleMake, vehicleModel].filter(Boolean).join(' ').trim(),
+            services: getSelectedServiceLabels(form),
+            message: getFieldValue(form, '#message'),
+            timestamp: new Date().toISOString()
+        };
+    }
+
+    function buildQuotePayload(form) {
+        const homepageFirstName = getFieldValue(form, '#firstName');
+        const homepageLastName = getFieldValue(form, '#lastName');
+        const enteredFullName = getFieldValue(form, '#name') || [homepageFirstName, homepageLastName].filter(Boolean).join(' ').trim();
+        const nameParts = enteredFullName ? enteredFullName.split(/\s+/).filter(Boolean) : [];
+        const firstName = homepageFirstName || (nameParts[0] || '');
+        const lastName = homepageLastName || (nameParts.slice(1).join(' ') || '');
+        const fullName = enteredFullName || [firstName, lastName].filter(Boolean).join(' ').trim();
+        const vehicleYear = getFieldValue(form, '#vehicle-year');
+        const vehicleMake = getFieldValue(form, '#vehicle-make');
+        const vehicleModel = getFieldValue(form, '#vehicle-model');
+        const vehicleColor = getFieldValue(form, '#vehicle-color');
+        const vehicleDisplay = getFieldValue(form, '#vehicle') || [vehicleYear, vehicleMake, vehicleModel].filter(Boolean).join(' ').trim();
+        const services = getSelectedServiceLabels(form);
+        const timestamp = new Date().toISOString();
+
+        return {
+            firstName,
+            lastName,
+            name: fullName,
+            fullName,
+            email: getFieldValue(form, '#email'),
+            phone: getFieldValue(form, '#phone'),
+            preferredContact: getFieldValue(form, '#preferred-contact'),
+            vehicle: vehicleDisplay,
+            vehicleYear,
+            vehicleMake,
+            vehicleModel,
+            vehicleColor,
+            services,
+            message: getFieldValue(form, '#message'),
+            sourcePage: window.location.pathname.split('/').pop() || 'index.html',
+            formVariant: form.dataset.quoteVariant || 'default',
+            timestamp,
+            canonical: {
+                contact: {
+                    firstName,
+                    lastName,
+                    fullName,
+                    email: getFieldValue(form, '#email'),
+                    phone: getFieldValue(form, '#phone'),
+                    preferredContact: getFieldValue(form, '#preferred-contact')
+                },
+                vehicle: {
+                    display: vehicleDisplay,
+                    year: vehicleYear,
+                    make: vehicleMake,
+                    model: vehicleModel,
+                    color: vehicleColor
+                },
+                services,
+                message: getFieldValue(form, '#message'),
+                sourcePage: window.location.pathname.split('/').pop() || 'index.html',
+                formVariant: form.dataset.quoteVariant || 'default',
+                timestamp
+            }
+        };
+    }
+
+    quoteForms.forEach((quoteForm) => {
+        const formSuccess = quoteForm.parentElement ? quoteForm.parentElement.querySelector('.form-success') : null;
+        let formSubmitted = false;
+
         quoteForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Prevent double submission
+
             if (formSubmitted) return;
-            
-            // Honeypot spam check
+
             const honeypot = quoteForm.querySelector('#website');
             if (honeypot && honeypot.value !== '') {
                 quoteForm.style.display = 'none';
                 if (formSuccess) formSuccess.style.display = 'block';
                 return;
             }
-            
-            // Validate email is provided
-            const emailInput = quoteForm.querySelector('#email');
-            if (!emailInput || !emailInput.value.trim()) {
-                alert('Please enter your email address.');
+
+            if (!quoteForm.reportValidity()) {
                 return;
             }
-            
-            // Check if at least one service is selected
+
             const selectedServices = quoteForm.querySelectorAll('input[name="services"]:checked');
             if (selectedServices.length === 0) {
                 alert('Please select at least one service you are interested in.');
                 return;
             }
-            
+
             const submitBtn = quoteForm.querySelector('.btn-submit');
+            if (!submitBtn) {
+                return;
+            }
+
             const originalText = submitBtn.innerHTML;
-            
             formSubmitted = true;
-            
-            // Show loading state
             submitBtn.innerHTML = '<span>Sending...</span><svg class="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>';
             submitBtn.disabled = true;
-            
+
             try {
-                const scriptUrl = quoteForm.dataset.googleScript;
-                
-                // Get selected services from checkboxes
-                const servicesArray = [];
-                const serviceCheckboxes = quoteForm.querySelectorAll('input[name="services"]:checked');
-                serviceCheckboxes.forEach(checkbox => {
-                    // Get the display text instead of just the value
-                    const label = checkbox.closest('.checkbox-item').querySelector('.checkbox-text');
-                    servicesArray.push(label ? label.textContent : checkbox.value);
-                });
-                
-                const formData = {
-                    firstName: quoteForm.querySelector('#firstName').value.trim(),
-                    lastName: quoteForm.querySelector('#lastName').value.trim(),
-                    email: quoteForm.querySelector('#email').value.trim(),
-                    phone: quoteForm.querySelector('#phone').value.trim(),
-                    vehicle: quoteForm.querySelector('#vehicle').value.trim(),
-                    services: servicesArray,
-                    message: quoteForm.querySelector('#message').value.trim(),
-                    timestamp: new Date().toISOString()
-                };
-                
-                console.log('Submitting form data:', formData);
-                
-                // Use fetch with no-cors mode - this will send the data but we can't read the response
-                // So we'll assume success if no error is thrown
-                await fetch(scriptUrl, {
+                const endpoint = quoteForm.dataset.quoteEndpoint || quoteForm.dataset.googleScript;
+                const requestMode = quoteForm.dataset.quoteMode || (quoteForm.dataset.googleScript ? 'no-cors' : 'cors');
+                const isLegacyGoogleScript = Boolean(quoteForm.dataset.googleScript) && endpoint === quoteForm.dataset.googleScript;
+                const payload = isLegacyGoogleScript ? buildLegacyQuotePayload(quoteForm) : buildQuotePayload(quoteForm);
+
+                if (!endpoint) {
+                    throw new Error('Quote endpoint is not configured.');
+                }
+
+                console.log('Submitting quote payload:', payload);
+
+                const requestOptions = {
                     method: 'POST',
-                    mode: 'no-cors',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(formData)
-                });
-                
-                // If we get here without error, assume success
-                // (no-cors mode doesn't let us read the response)
-                console.log('Form submitted successfully');
-                
-                // Show success message
+                    body: JSON.stringify(payload)
+                };
+
+                if (requestMode === 'no-cors') {
+                    requestOptions.mode = 'no-cors';
+                }
+
+                const response = await fetch(endpoint, requestOptions);
+
+                if (requestMode !== 'no-cors' && !response.ok) {
+                    throw new Error('Quote request failed with status ' + response.status);
+                }
+
+                console.log('Quote submitted successfully');
                 quoteForm.style.display = 'none';
+
                 if (formSuccess) {
                     formSuccess.style.display = 'block';
                     if (isMobile) {
                         formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                 }
-                
             } catch (error) {
                 formSubmitted = false;
                 console.error('Form submission error:', error);
@@ -607,7 +696,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.disabled = false;
             }
         });
-    }
+    });
 
     // ============================================
     // CONTACT FORM HANDLING (if exists)

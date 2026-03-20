@@ -1,0 +1,501 @@
+VIVID AUTO DETAILS WEBSITE HANDOFF
+
+Purpose of this package
+This folder was prepared so another AI agent or developer can understand the current website quickly and connect it to a replacement CRM / quoting system.
+
+Contents of this handoff package
+1. website-copy/
+   This is a direct snapshot copy of the current website files.
+   It includes the HTML pages, CSS, JavaScript, image/media assets, icons, CNAME, and existing README.
+   It excludes only repository metadata and local development artifacts:
+   - .git/
+   - .venv/
+
+2. WEBSITE_EXPLANATION.txt
+   This document explains how the site is structured, how pages connect, which files matter most, what third-party systems are currently used, and where CRM / quote integrations currently happen.
+
+3. QUOTE_INTEGRATION_CONTRACT.txt
+   This document describes the normalized quote payload, the generic endpoint attributes now used in the markup, and the behavior expected by a replacement CRM endpoint.
+
+
+==================================================
+UPDATE: QUOTE REFACTOR COMPLETED
+==================================================
+
+After this handoff package was first created, the quote handling was refactored in the live site and the handoff snapshot was refreshed.
+
+What changed
+- The homepage quote form no longer uses a Google-specific attribute name.
+- The homepage now uses generic integration attributes:
+  - data-quote-endpoint
+  - data-quote-mode
+  - data-quote-variant
+- services.html was updated to use the same generic integration attributes.
+- services.html now has a honeypot field and a success state block.
+- script.js now handles quote forms generically by selecting all .quote-form elements instead of assuming only one homepage form structure.
+- script.js now builds a normalized payload that can be sent to a future CRM endpoint.
+- The payload still includes the legacy flat fields so the current Google Apps Script transport can continue working during transition.
+
+Current transition state
+- The transport is still pointing to the existing Google Apps Script URL for now.
+- The integration point is now generic, so switching to the new system should only require changing the endpoint and, if needed, the request mode.
+- The handoff snapshot in website-copy/ has been refreshed with the updated index.html, services.html, and script.js.
+
+
+==================================================
+1. HIGH-LEVEL WEBSITE SUMMARY
+==================================================
+
+This website is a static multi-page marketing site for Vivid Auto Details.
+
+Technology stack
+- Plain HTML files
+- One shared CSS file: style.css
+- One shared JavaScript file: script.js
+- Static image/video assets in images/
+- No framework
+- No build step
+- No package.json
+- No backend inside this repository
+
+What the website does
+- Markets the business and services
+- Drives visitors to the external booking platform
+- Shows service information, gallery, blog content, and FAQs
+- Collects quote requests on the homepage through a Google Apps Script endpoint
+
+What the website does NOT contain
+- No local CRM backend
+- No database
+- No authentication
+- No server-side routes
+- No API layer in this repo
+
+This means any CRM replacement or site-to-site integration will need to be connected from the frontend code to an external system or a new backend that you build elsewhere.
+
+
+==================================================
+2. ROOT FILE STRUCTURE
+==================================================
+
+Main public-facing files
+- index.html
+- services.html
+- services-detail.html
+- gallery.html
+- blog.html
+- blog-ceramic-vs-ppf.html
+- blog-ceramic-maintenance.html
+- blog-sacramento-car-damage.html
+- faqs.html
+- style.css
+- script.js
+- README.md
+- CNAME
+
+Asset folders
+- images/
+  Active website media. Includes hero images, logo files, gallery images, the hero desktop video, and the mobile hero video.
+
+- images_backup/
+  Backup assets. Not part of the main live logic, but copied here because it may still be useful for reference.
+
+Brand / deployment files
+- CNAME
+  Indicates this site is intended for custom-domain deployment, likely through GitHub Pages or a similar static host.
+
+- favicon.ico, favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png
+  Standard site icons referenced from page head elements.
+
+
+==================================================
+3. PAGE-BY-PAGE PURPOSE
+==================================================
+
+index.html
+This is the primary homepage and the most important integration point.
+
+Homepage section structure
+- Hero section with desktop and mobile background videos
+- Services section
+- About section
+- Instagram / gallery section via Elfsight embed
+- Reviews section with hardcoded review cards and Google branding images
+- Contact / quote section
+- Footer
+
+Important note
+The homepage contains the currently active quote form that posts to Google Apps Script.
+
+
+services.html
+A service overview page with multiple service sections and another quote form.
+
+Important integration note
+This page contains a second form with id="quoteForm", but its field structure does NOT match the quote form logic in script.js.
+
+Differences from the homepage quote form
+- It uses full name instead of firstName / lastName
+- It uses separate vehicle year / make / model fields instead of one vehicle field
+- It uses different checkbox markup
+- It does not include the data-google-script attribute
+
+Practical consequence
+The shared JavaScript quote submission logic was clearly written for the homepage form, not this service page form. If the services.html form is used today, it is either non-functional or not aligned with the existing submission code. This matters when replacing the CRM because there are effectively two different quote form structures in the repo.
+
+
+services-detail.html
+Detailed service landing page with individual sections for offerings like exterior detail, interior detail, paint correction, ceramic coating, PPF, and tint. It is mostly informational and CTA-driven.
+
+
+gallery.html
+Gallery page. Includes an embedded Instagram feed through Elfsight and CTA links back into booking.
+
+
+blog.html
+Blog listing page that links to article pages.
+
+
+blog-ceramic-vs-ppf.html
+Static article page.
+
+
+blog-ceramic-maintenance.html
+Static article page.
+
+
+blog-sacramento-car-damage.html
+Static article page.
+
+
+faqs.html
+FAQ page with accordion items. The accordion behavior is handled by shared JavaScript in script.js.
+
+
+==================================================
+4. SHARED FRONTEND ARCHITECTURE
+==================================================
+
+All pages are traditional static HTML documents.
+
+Common shared dependencies across pages
+- style.css
+- script.js
+- Google Fonts:
+  Inter
+  Playfair Display
+
+Most pages also share the same brand language:
+- dark theme
+- centered logo / high-end visual styling
+- animated transitions and reveal effects
+- large CTA buttons leading to booking or quote flows
+
+Homepage special behavior
+- The homepage has a curtain reveal intro animation controlled by JavaScript and CSS.
+- Secondary pages usually use body class="no-curtain" to skip that intro.
+
+Navigation patterns
+- Desktop mega navigation overlay exists on multiple pages
+- Mobile menu exists on multiple pages
+- Homepage uses anchor-based navigation to internal sections such as #home, #services, #about, #gallery, #reviews, #contact
+- Secondary pages use standard page links back to the homepage or to other standalone pages
+
+
+==================================================
+5. KEY FILES FOR INTEGRATION WORK
+==================================================
+
+Most important files if replacing the CRM / quote system
+
+1. index.html
+   Holds the main live quote form markup.
+
+2. script.js
+   Contains the form submission logic, validation, loading state, success state, and the current Google Apps Script POST.
+
+3. services.html
+   Contains a second quote form that is structurally different and should be reviewed separately.
+
+4. style.css
+   Contains styling for forms, buttons, nav behavior, reveal states, and layout.
+
+
+==================================================
+6. CURRENT QUOTE FORM: HOMEPAGE
+==================================================
+
+Location
+- index.html
+- Section id: contact
+- Form id: quoteForm
+
+Current endpoint location
+The homepage form stores its submission endpoint in a generic HTML data attribute:
+
+data-quote-endpoint="https://script.google.com/macros/s/AKfycbzmZHmiwRoL9ZHxpDMhfreazG55qm6PCuLMh6M5rWZgCSrxTrC2E2kT734tz6eoQyX8/exec"
+
+The request mode is also explicit now:
+
+data-quote-mode="no-cors"
+
+Current homepage quote fields
+- firstName
+- lastName
+- email
+- phone
+- vehicle
+- services[] via checkboxes
+- message
+- hidden honeypot field: website
+
+Homepage quote flow in JavaScript
+The logic lives in script.js under the QUOTE FORM HANDLING section and now applies to all .quote-form instances.
+
+Behavior summary
+1. It finds the form by id="quoteForm".
+2. It prevents double-submission with a formSubmitted flag.
+3. It checks a hidden honeypot field named website.
+4. It validates that email exists.
+5. It validates that at least one service checkbox is selected.
+6. It changes the submit button into a sending state.
+7. It reads the generic endpoint URL from quoteForm.dataset.quoteEndpoint.
+8. It reads the request mode from quoteForm.dataset.quoteMode.
+9. It builds a JSON payload that includes both flat legacy fields and a canonical nested structure.
+10. It POSTs to the endpoint using fetch().
+11. If the mode is "no-cors", it assumes success if no exception is thrown.
+12. If the mode is not "no-cors", it requires a successful HTTP response.
+13. On success, it hides the form and shows the success message block.
+14. On failure, it restores the button state and shows an alert.
+
+Current JSON payload shape for the homepage form
+{
+  firstName: string,
+  lastName: string,
+   fullName: string,
+  email: string,
+  phone: string,
+   preferredContact: string,
+  vehicle: string,
+   vehicleYear: string,
+   vehicleMake: string,
+   vehicleModel: string,
+   vehicleColor: string,
+  services: string[],
+  message: string,
+   sourcePage: string,
+   formVariant: string,
+   timestamp: ISO-8601 string,
+   canonical: {
+      contact: {...},
+      vehicle: {...},
+      services: string[],
+      message: string,
+      sourcePage: string,
+      formVariant: string,
+      timestamp: ISO-8601 string
+   }
+}
+
+How selected services are built
+- The script reads checked checkboxes with name="services"
+- It uses the visible label text from .checkbox-text when available
+- This means the submitted service strings are human-readable labels, not only raw checkbox values
+
+Important integration implication
+If you replace Google Apps Script with your own system, the easiest current hook is either:
+- keep the existing homepage form markup and replace the endpoint + JS submission logic, or
+- replace the current quote handling block in script.js entirely and send the same or updated payload to your own API / CRM service
+
+
+==================================================
+7. SECOND QUOTE FORM: SERVICES PAGE
+==================================================
+
+Location
+- services.html
+- Section id: quote
+- Form id: quoteForm
+
+This form was originally not wired the same way as the homepage form. It has now been connected into the shared quote handling system.
+
+Fields on services.html form
+- name
+- phone
+- email
+- preferred-contact
+- vehicle-year
+- vehicle-make
+- vehicle-model
+- vehicle-color
+- services[]
+- message
+
+Current behavior
+- services.html now participates in the shared quote submission system.
+- The JavaScript normalizes its richer vehicle and contact fields into the same payload contract.
+- It now includes a honeypot field and a success message block.
+- It still has a richer field set than the homepage, but both forms now submit through the same generic integration path.
+
+
+==================================================
+8. OTHER SHARED JAVASCRIPT BEHAVIOR
+==================================================
+
+script.js is not only for forms. It also controls site-wide behavior.
+
+Key behaviors in script.js
+- Device detection for mobile vs desktop
+- Hero video autoplay and retry behavior
+- Curtain reveal intro animation
+- Sticky header scroll state
+- Mobile menu open / close behavior
+- Desktop mega-nav overlay open / close behavior
+- Smooth scrolling for anchor links
+- IntersectionObserver-based reveal animations
+- Active section link highlighting on the homepage
+- Desktop parallax effect for hero image
+- Service card hover interactions
+- FAQ accordion open / close behavior
+- Quote form handling
+- Generic contact form handling if a contactForm id exists
+- Page visibility class toggling
+
+Integration warning
+Because all pages load the same script.js, any CRM-related changes in that file should be careful not to break navigation, animation, or FAQ behavior.
+
+
+==================================================
+9. THIRD-PARTY AND EXTERNAL DEPENDENCIES
+==================================================
+
+The current site depends on several outside services.
+
+Booking platform
+- https://vividautodetails.fieldd.co/
+- Used throughout the site as the main "Book Now" destination
+
+Quote form transport
+- Google Apps Script endpoint stored on the homepage form
+
+Instagram feed embed
+- https://elfsightcdn.com/platform.js
+- Elfsight app container appears on the homepage and gallery page
+
+Fonts
+- Google Fonts
+
+External brand / business links
+- Instagram
+- Yelp
+- Google Maps address link
+- Google search / review links
+
+Important system split today
+- Booking is handled by Fieldd
+- Quote request transport is handled by Google Apps Script on the homepage
+- There is no in-repo CRM
+
+
+==================================================
+10. MEDIA / ASSET USAGE
+==================================================
+
+Primary live assets are in images/.
+
+Notable assets used by the homepage
+- images/logo.jpg
+- images/hero.jpg
+- images/hero-mobile.jpg
+- images/hero-video.mp4
+- images/hero-video mobile.mp4
+- images/Vivid Van.jpg
+
+Gallery / content assets
+- numbered JPG files in images/
+
+Backup assets
+- images_backup/ contains older or backup versions of some media files
+
+Why assets were copied into the handoff package
+Even though the main request was for code understanding, the site structure depends on these files and another agent may need them to understand references, media loading, and page composition.
+
+
+==================================================
+11. DEPLOYMENT / HOSTING CHARACTERISTICS
+==================================================
+
+The repo looks like a static-site deployment, likely compatible with GitHub Pages.
+
+Evidence
+- No build tooling
+- Root-level HTML files
+- Root-level CNAME file
+- Existing README describes GitHub Pages deployment
+
+Implication for future CRM integration
+If you keep this site static, the new CRM / quote system will likely need one of these patterns:
+- a hosted external API endpoint that the frontend calls directly
+- a serverless function layer
+- a separate application that receives quote submissions and stores them in your new system
+- embedded widgets or redirect flows from the other site
+
+
+==================================================
+12. BEST ENTRY POINTS FOR A NEW AI AGENT
+==================================================
+
+If another AI agent is taking over the CRM integration work, it should inspect files in this order:
+
+1. website-copy/index.html
+   Understand the primary homepage and active quote form.
+
+2. website-copy/script.js
+   Review the QUOTE FORM HANDLING logic and all shared site behavior.
+
+3. website-copy/services.html
+   Compare the second quote form and decide whether it should be unified or separately handled.
+
+4. website-copy/style.css
+   Review form and layout styling before altering markup.
+
+5. website-copy/gallery.html, blog.html, faqs.html, services-detail.html
+   Understand how the rest of the site routes users toward booking and quoting.
+
+
+==================================================
+13. RECOMMENDED CRM REPLACEMENT FOCUS
+==================================================
+
+If the goal is to replace the current CRM / quote transport cleanly, the highest-value tasks are:
+
+1. Standardize quote forms
+   Decide whether the homepage and services page should share one schema or remain separate.
+
+2. Replace the Google Apps Script transport
+   Update the homepage quote submission to point to your new system.
+
+3. Define a canonical payload
+   Make sure both quote entry points, if both remain, map into the same backend structure.
+
+4. Decide how booking and quoting should coexist
+   Right now "Book Now" routes to Fieldd while quote requests route elsewhere.
+   If your new system replaces both, those links and form handlers should be aligned together.
+
+5. Preserve shared site behavior when editing script.js
+   Many unrelated visual and navigation features live in that file.
+
+
+==================================================
+14. MOST IMPORTANT TAKEAWAYS
+==================================================
+
+- This is a static HTML/CSS/JS website.
+- The homepage quote form is the main live integration point.
+- That homepage form currently posts to Google Apps Script through JavaScript in script.js.
+- The booking flow is separate and points to Fieldd.
+- services.html contains a second quote form with a different schema and likely mismatched JavaScript behavior.
+- There is no backend in this repo, so CRM replacement must connect to an external system or a new backend you build.
+
+
+End of handoff document.
