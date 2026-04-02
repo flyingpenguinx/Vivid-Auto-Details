@@ -1,0 +1,281 @@
+VIVID AUTO DETAILS - REACT + SUPABASE + VERCEL LAUNCH GUIDE
+Date: 2026-02-25
+
+==================================================
+1) WHAT TO CHANGE (WITHOUT LOSING DESIGN/FUNCTIONS)
+==================================================
+
+Current state observations:
+- Multiple HTML pages share repeated header/footer/nav blocks.
+- One large script.js handles all page behaviors globally.
+- Form currently posts to Google Apps Script in no-cors mode (no reliable response/error handling).
+- style.css is very large and includes repeated/overlapping mobile rules.
+
+React/Next.js efficiency plan (preserve current look + behavior):
+
+A. Move to Next.js App Router
+- Keep every visual section identical.
+- Create reusable shared layout once:
+  - app/layout.tsx (global shell)
+  - components/SiteHeader.tsx
+  - components/SiteFooter.tsx
+- Create routes matching current pages:
+  - / (home)
+  - /services
+  - /services-detail
+  - /gallery
+  - /blog
+  - /blog/ceramic-vs-ppf
+  - /blog/ceramic-maintenance
+  - /blog/sacramento-car-damage
+  - /faqs
+
+B. Break script.js into focused React units
+- useMobileMenu hook
+- useMegaNav hook
+- useScrollHeader hook
+- useRevealOnScroll hook (IntersectionObserver)
+- QuoteForm component with controlled validation and submit states
+- FAQAccordion component
+
+C. Keep design, reduce duplication
+- Move repeated page content into data files:
+  - data/services.ts
+  - data/faqs.ts
+  - data/blogPosts.ts
+- Render cards/sections with map() instead of repeated markup blocks.
+
+D. Performance upgrades with zero design loss
+- Use next/image for all non-video images.
+- Keep critical hero assets in /public for instant fetch.
+- Lazy-load heavy sections:
+  - Instagram embed
+  - review widgets
+- Dynamically import non-critical components:
+  - Gallery filters
+  - optional animations
+
+E. Form architecture upgrade (important)
+- Replace direct browser-to-third-party submit with:
+  - client form -> /api/leads (server route) -> Supabase insert
+- Benefits:
+  - secure keys
+  - reliable response status
+  - better anti-spam and validation
+  - easier CRM expansion
+
+==================================================
+2) SUPABASE SETUP (LEADS NOW, CRM LATER)
+==================================================
+
+Step 1: Create project
+1. Go to https://supabase.com
+2. Create new project (region near Sacramento/West Coast).
+3. Save:
+   - Project URL
+   - anon public key
+   - service role key (server only)
+
+Step 2: Create database schema
+In Supabase SQL Editor, run:
+
+--------------------------------------------------
+create extension if not exists pgcrypto;
+
+create type lead_status as enum (
+  'new',
+  'contacted',
+  'quoted',
+  'booked',
+  'done',
+  'lost'
+);
+
+create table if not exists public.leads (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  first_name text not null,
+  last_name text,
+  email text not null,
+  phone text,
+  vehicle text not null,
+  services text[] not null default '{}',
+  message text,
+  source text not null default 'website',
+  status lead_status not null default 'new',
+  spam_score int not null default 0,
+  is_spam boolean not null default false
+);
+
+create table if not exists public.lead_notes (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  lead_id uuid not null references public.leads(id) on delete cascade,
+  note text not null,
+  created_by text
+);
+
+create index if not exists leads_created_at_idx on public.leads(created_at desc);
+create index if not exists leads_status_idx on public.leads(status);
+create index if not exists leads_email_idx on public.leads(email);
+--------------------------------------------------
+
+Step 3: Enable Row Level Security
+- Table Editor -> leads -> Enable RLS
+- Table Editor -> lead_notes -> Enable RLS
+
+Step 4: Policies
+Use strict policies:
+- Browser users: NO direct insert/update on leads table.
+- Only server route (using service role key) writes leads.
+- Dashboard users (future CRM auth) can read/update based on role.
+
+Initial safe approach:
+- Keep no public policies for writes.
+- Use service role key only in server runtime (never expose to client).
+
+Step 5: Storage buckets for images
+Create buckets:
+- gallery-public (Public: ON) for website gallery and blog assets
+- crm-private (Public: OFF) for internal/customer docs later
+
+For website speed:
+- Use public URLs from gallery-public with long cache headers.
+- Use transformed image URLs for resized variants when available.
+
+==================================================
+3) WHERE TO KEEP IMAGES FOR FAST LOADING
+==================================================
+
+Best hybrid strategy:
+
+1) /public in Next.js (repo)
+Use for:
+- logo
+- favicon files
+- hero poster/fallback
+- small brand assets used on every page
+
+Why:
+- fastest first-load path
+- easy preloading
+- no external request dependency for critical UI assets
+
+2) Supabase Storage (gallery-public bucket)
+Use for:
+- large gallery photos
+- blog images
+- future uploaded assets
+
+Why:
+- keeps git repo light
+- easier content updates without redeploying whole app
+- can power future CRM uploads
+
+3) Optional later: Vercel Blob
+Use only if you want tighter Vercel-native media workflows.
+For your plan (Supabase CRM), keeping images in Supabase is cleaner.
+
+==================================================
+4) NEXT.JS PROJECT BOOTSTRAP (REACT START)
+==================================================
+
+From repo root:
+
+1. Create app
+- npx create-next-app@latest vivid-react --ts --eslint --app
+
+2. Install deps
+- npm install @supabase/supabase-js zod react-hook-form
+
+3. Move your design assets
+- Copy images to vivid-react/public/images
+- Copy and refactor style.css into:
+  - app/globals.css
+  - optional component-level css modules
+
+4. Add env file (vivid-react/.env.local)
+- NEXT_PUBLIC_SUPABASE_URL=...
+- NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+- SUPABASE_SERVICE_ROLE_KEY=...
+
+IMPORTANT:
+- Only NEXT_PUBLIC_* keys can be read on browser side.
+- SUPABASE_SERVICE_ROLE_KEY must stay server-only.
+
+==================================================
+5) LEAD FORM FLOW IN NEXT.JS
+==================================================
+
+Client side:
+- Keep same fields currently on your quote form.
+- Validate required fields before submit.
+- Post JSON to /api/leads.
+
+Server side (app/api/leads/route.ts):
+- Parse request with zod schema.
+- Honeypot/spam checks.
+- Insert into public.leads via supabase admin client (service role key).
+- Return success/failure JSON.
+
+Optional immediate add-ons:
+- Send email notification (Resend/Postmark).
+- Send SMS notification (Twilio).
+- Auto-tag by selected service.
+
+==================================================
+6) VERCEL SETUP (DEPLOY READY)
+==================================================
+
+1. Push Next.js app to GitHub.
+2. In Vercel:
+   - New Project -> import repo
+   - Framework preset should auto-detect Next.js
+3. Add environment variables (Project Settings -> Environment Variables):
+   - NEXT_PUBLIC_SUPABASE_URL
+   - NEXT_PUBLIC_SUPABASE_ANON_KEY
+   - SUPABASE_SERVICE_ROLE_KEY
+4. Deploy.
+5. Connect domain:
+   - vividautodetails.com (or current custom domain)
+   - add DNS records from Vercel instructions
+6. Re-deploy after DNS resolves.
+
+Recommended Vercel settings:
+- Enable Analytics
+- Enable Speed Insights
+- Keep default edge caching for static assets
+
+==================================================
+7) PRE-LAUNCH CHECKLIST
+==================================================
+
+MUST PASS before launch:
+- Home, services, gallery, blog, FAQs pages render pixel-correct.
+- Mobile menu + mega nav behavior match current site.
+- Quote form inserts rows into Supabase leads table.
+- No client exposure of service role key.
+- Image loading optimized (hero fast, gallery lazy).
+- 404 and metadata configured.
+- Domain + SSL active on Vercel.
+
+==================================================
+8) CRM PHASE 2 (AFTER LAUNCH)
+==================================================
+
+Build internal dashboard routes:
+- /admin/leads
+- /admin/leads/[id]
+
+Add features in order:
+1. Lead status board (new/contacted/quoted/booked/done/lost)
+2. Notes + activity timeline
+3. Reminder tasks
+4. Quote templates and send logs
+5. Basic analytics (conversion rate by service)
+
+This replaces paid CRM progressively while keeping your workflow simple.
+
+==================================================
+END
+==================================================
