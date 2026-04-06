@@ -5239,6 +5239,18 @@ section {
     margin-bottom: 2rem;
 }
 
+.service-detail-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-detail-copy p {
+    color: var(--white-muted);
+    line-height: 1.8;
+}
+
 .service-detail-features h4 {
     font-size: 1rem;
     font-weight: 600;
@@ -5432,6 +5444,10 @@ section {
     }
     
     .service-detail-intro {
+        font-size: 0.95rem;
+    }
+
+    .service-detail-copy p {
         font-size: 0.95rem;
     }
     

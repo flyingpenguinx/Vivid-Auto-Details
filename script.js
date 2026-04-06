@@ -613,12 +613,40 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    function buildBridgeQuotePayload(form) {
+        const quotePayload = buildQuotePayload(form);
+
+        return {
+            firstName: quotePayload.firstName,
+            lastName: quotePayload.lastName,
+            name: quotePayload.fullName || quotePayload.name,
+            email: quotePayload.email,
+            phone: quotePayload.phone,
+            vehicle: quotePayload.vehicle,
+            preferred_date: getFieldValue(form, '#preferred-date') || getFieldValue(form, '#preferred_date'),
+            message: quotePayload.message,
+            services: quotePayload.services,
+            service_requested: quotePayload.services.join(', ')
+        };
+    }
+
+    function submitBridgeQuote(form) {
+        const bridge = window.Cielonline;
+
+        if (!bridge || typeof bridge.submitInquiry !== 'function') {
+            return Promise.resolve(null);
+        }
+
+        return bridge.submitInquiry(buildBridgeQuotePayload(form));
+    }
+
     quoteForms.forEach((quoteForm) => {
         const formSuccess = quoteForm.parentElement ? quoteForm.parentElement.querySelector('.form-success') : null;
         let formSubmitted = false;
 
         quoteForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            e.stopImmediatePropagation();
 
             if (formSubmitted) return;
 
@@ -678,6 +706,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (requestMode !== 'no-cors' && !response.ok) {
                     throw new Error('Quote request failed with status ' + response.status);
                 }
+
+                submitBridgeQuote(quoteForm).catch((bridgeError) => {
+                    console.warn('Bridge quote submission failed after legacy submit succeeded:', bridgeError);
+                });
 
                 console.log('Quote submitted successfully');
                 quoteForm.style.display = 'none';

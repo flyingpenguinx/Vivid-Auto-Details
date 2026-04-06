@@ -30,7 +30,7 @@
             <ul class="nav-right">
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                 <li><a href="index.html?skipIntro=true#contact" class="nav-link">Contact</a></li>
-                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="nav-link cta-link">Book Now</a></li>
+                <li><a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="nav-link cta-link">Book Now</a></li>
             </ul>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
                 <span></span>
@@ -46,7 +46,7 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
                 <li><a href="index.html?skipIntro=true#contact">Contact</a></li>
-                <li><a href="https://vividautodetails.fieldd.co/" target="_blank" class="mobile-cta">Book Now</a></li>
+                <li><a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="mobile-cta">Book Now</a></li>
             </ul>
         </div>
     </header>
@@ -60,9 +60,9 @@
             </div>
             <div class="container">
                 <div class="page-hero-content">
-                    <span class="section-label">Premium Auto Care</span>
+                    <span class="section-label" data-ciel-field="services_detail.hero.eyebrow">Premium Auto Care</span>
                     <h1 class="page-title">Our <em>Services</em></h1>
-                    <p class="page-subtitle">Professional detailing services tailored to your vehicle's needs. From basic washes to complete paint protection.</p>
+                    <p class="page-subtitle" data-ciel-field="services_detail.hero.subtitle">Explore every Vivid service in detail, from deep cleaning packages to long-term paint protection and shop-friendly overnight appointments.</p>
                 </div>
             </div>
         </section>
@@ -71,42 +71,14 @@
         <section class="service-nav-section">
             <div class="container">
                 <div class="service-nav-grid">
-                    <a href="#exterior" class="service-nav-item">
-                        <span class="service-nav-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </span>
-                        <span>Exterior Detail</span>
-                    </a>
-                    <a href="#interior" class="service-nav-item">
-                        <span class="service-nav-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                        </span>
-                        <span>Interior Detail</span>
-                    </a>
-                    <a href="#full-detail" class="service-nav-item">
-                        <span class="service-nav-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        </span>
-                        <span>Full Detail</span>
-                    </a>
-                    <a href="#ceramic" class="service-nav-item">
-                        <span class="service-nav-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </span>
-                        <span>Ceramic Coating</span>
-                    </a>
-                    <a href="#ppf" class="service-nav-item">
-                        <span class="service-nav-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>
-                        </span>
-                        <span>Paint Protection Film</span>
-                    </a>
-                    <a href="#tint" class="service-nav-item">
-                        <span class="service-nav-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        </span>
-                        <span>Window Tint</span>
-                    </a>
+                    <a href="#exterior" class="service-nav-item"><span class="service-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span>Exterior</span></a>
+                    <a href="#full-detail" class="service-nav-item"><span class="service-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span>Full Detail</span></a>
+                    <a href="#interior" class="service-nav-item"><span class="service-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>Interior</span></a>
+                    <a href="#ceramic" class="service-nav-item"><span class="service-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Ceramic</span></a>
+                    <a href="#paint-correction" class="service-nav-item"><span class="service-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span><span>Correction</span></a>
+                    <a href="#ppf" class="service-nav-item"><span class="service-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg></span><span>PPF</span></a>
+                    <a href="#tint" class="service-nav-item"><span class="service-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span><span>Tint</span></a>
+                    <a href="#overnight" class="service-nav-item"><span class="service-nav-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span><span>Overnight</span></a>
                 </div>
             </div>
         </section>
@@ -114,457 +86,270 @@
         <!-- Services Detail Section -->
         <section class="services-detail-section">
             <div class="container">
-                
-                <!-- Exterior Detail -->
                 <div class="service-detail-card" id="exterior">
                     <div class="service-detail-content">
                         <div class="service-detail-header">
-                            <div class="service-detail-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                            </div>
+                            <div class="service-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
                             <div>
-                                <h2>Exterior Detail</h2>
-                                <p class="service-tagline">Restore your vehicle's showroom shine</p>
+                                <h2 data-ciel-field="services.exterior.title">Exterior Detail</h2>
+                                <p class="service-tagline" data-ciel-field="services.exterior.tagline">Deep Clean & Short-Term Paint Protection</p>
                             </div>
                         </div>
-                        <p class="service-detail-intro">Our exterior detailing service brings back the showroom shine to your vehicle's exterior with meticulous attention to every surface. We use premium products and techniques to clean, decontaminate, and protect your vehicle's paint.</p>
-                        
+                        <p class="service-detail-intro" data-ciel-field="services.exterior.intro">Our Exterior Detail thoroughly cleans, decontaminates, and protects your vehicle's paint while enhancing gloss and overall appearance beyond what a standard wash can deliver.</p>
+                        <div class="service-detail-copy">
+                            <p>We begin with deep wheel and tire cleaning to remove brake dust and buildup, followed by a foam prewash that loosens grime before any contact is made with the paint. The vehicle is then hand washed using safe methods that reduce the chance of adding swirl marks.</p>
+                            <p>Once clean, the paint is treated with a clay bar to remove embedded contamination like industrial fallout and road residue. We finish with a high-quality sealant for 3 to 6 months of protection, dressed tires, and streak-free exterior glass.</p>
+                        </div>
+                        <div class="service-detail-note"><strong>Optional add-on:</strong> Paint correction can be added for vehicles with swirl marks, light scratches, or dull paint to sharpen clarity before the sealant is applied.</div>
                         <div class="service-detail-features">
-                            <h4>What's Included:</h4>
+                            <h4>Who This Service Is Best For</h4>
                             <ul>
-                                <li><span class="check-icon">✓</span> Deep wheel cleaning & tire dressing</li>
-                                <li><span class="check-icon">✓</span> Foam prewash & hand wash</li>
-                                <li><span class="check-icon">✓</span> Claybar treatment for smooth paint</li>
-                                <li><span class="check-icon">✓</span> 3-6 month paint sealant application</li>
-                                <li><span class="check-icon">✓</span> Streak-free glass cleaning</li>
-                                <li><span class="check-icon">✓</span> Trim & plastic restoration</li>
-                                <li><span class="check-icon">✓</span> Door jambs cleaned</li>
-                                <li><span class="check-icon">✓</span> Exhaust tips polished</li>
+                                <li><span class="check-icon">✓</span> Daily-driven vehicles</li>
+                                <li><span class="check-icon">✓</span> Maintenance at 3 to 6 month intervals</li>
+                                <li><span class="check-icon">✓</span> Owners who want more than a standard wash can deliver</li>
+                                <li><span class="check-icon">✓</span> Vehicles exposed to road grime and environmental fallout</li>
                             </ul>
                         </div>
-                        
-                        <div class="service-detail-benefits">
-                            <h4>Benefits:</h4>
-                            <div class="benefits-grid">
-                                <div class="benefit-item">
-                                    <strong>Protection</strong>
-                                    <p>Sealant protects paint from UV rays, bird droppings, and environmental contaminants</p>
-                                </div>
-                                <div class="benefit-item">
-                                    <strong>Appearance</strong>
-                                    <p>Deep gloss finish that makes your car look like it just left the dealership</p>
-                                </div>
-                                <div class="benefit-item">
-                                    <strong>Longevity</strong>
-                                    <p>Regular exterior details help maintain your car's resale value</p>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <div class="service-detail-cta">
-                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                                <span>Book Exterior Detail</span>
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                                <span>Quote Form</span>
-                            </a>
+                            <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book Exterior Detail</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="services.html#quote" class="btn-secondary"><span>Request a Quote</span></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Interior Detail -->
-                <div class="service-detail-card" id="interior">
-                    <div class="service-detail-content">
-                        <div class="service-detail-header">
-                            <div class="service-detail-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                    <polyline points="9 22 9 12 15 12 15 22"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h2>Interior Detail</h2>
-                                <p class="service-tagline">Experience that new car feel again</p>
-                            </div>
-                        </div>
-                        <p class="service-detail-intro">Transform your vehicle's interior into a fresh, sanitized space. We eliminate odors, stains, and bring back that new car feel. Our thorough process ensures every nook and cranny is cleaned and treated.</p>
-                        
-                        <div class="service-detail-features">
-                            <h4>What's Included:</h4>
-                            <ul>
-                                <li><span class="check-icon">✓</span> Complete vacuum & debris removal</li>
-                                <li><span class="check-icon">✓</span> Steam cleaning & sanitization</li>
-                                <li><span class="check-icon">✓</span> Carpet & upholstery extraction</li>
-                                <li><span class="check-icon">✓</span> Odor elimination treatment</li>
-                                <li><span class="check-icon">✓</span> Leather cleaning & conditioning</li>
-                                <li><span class="check-icon">✓</span> Dashboard & trim cleaning</li>
-                                <li><span class="check-icon">✓</span> Air vent cleaning</li>
-                                <li><span class="check-icon">✓</span> Interior glass cleaning</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="service-detail-benefits">
-                            <h4>Benefits:</h4>
-                            <div class="benefits-grid">
-                                <div class="benefit-item">
-                                    <strong>Health</strong>
-                                    <p>Steam cleaning kills bacteria and allergens for a healthier cabin environment</p>
-                                </div>
-                                <div class="benefit-item">
-                                    <strong>Fresh</strong>
-                                    <p>Professional odor elimination removes stubborn smells at the source</p>
-                                </div>
-                                <div class="benefit-item">
-                                    <strong>Comfort</strong>
-                                    <p>Clean, conditioned surfaces make every drive more enjoyable</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="service-detail-cta">
-                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                                <span>Book Interior Detail</span>
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                                <span>Quote Form</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Full Detail Package -->
                 <div class="service-detail-card featured" id="full-detail">
                     <span class="featured-badge">Most Popular</span>
                     <div class="service-detail-content">
                         <div class="service-detail-header">
-                            <div class="service-detail-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M12 6v6l4 2"/>
-                                </svg>
-                            </div>
+                            <div class="service-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
                             <div>
-                                <h2>Full Detail Package</h2>
-                                <p class="service-tagline">The complete transformation</p>
+                                <h2 data-ciel-field="services.full_detail.title">Full Detail Package</h2>
+                                <p class="service-tagline" data-ciel-field="services.full_detail.tagline">Complete Interior & Exterior Restoration</p>
                             </div>
                         </div>
-                        <p class="service-detail-intro">Our signature service combines both interior and exterior detailing for the ultimate vehicle refresh. This comprehensive package is perfect for maintaining your vehicle's condition or preparing it for sale.</p>
-                        
+                        <p class="service-detail-intro" data-ciel-field="services.full_detail.intro">Our Full Detail Package is a complete reset for vehicles that need more than a light cleanup, combining interior restoration and exterior protection in one appointment.</p>
+                        <div class="service-detail-copy">
+                            <p>Inside the vehicle, we vacuum carpets, seats, and tight areas before using steam to sanitize vents, seams, trim, and crevices. Carpets and cloth seats are shampooed and extracted, while leather surfaces are cleaned and conditioned for a natural finish.</p>
+                            <p>Outside, the vehicle receives a full wash and decontamination. Wheels and tires are deep cleaned, paint is hand washed, and the finish is protected so maintenance stays easier after the service.</p>
+                        </div>
                         <div class="service-detail-features">
-                            <h4>What's Included:</h4>
+                            <h4>Who This Service Is Best For</h4>
                             <ul>
-                                <li><span class="check-icon">✓</span> Complete Exterior Detail service</li>
-                                <li><span class="check-icon">✓</span> Complete Interior Detail service</li>
-                                <li><span class="check-icon">✓</span> Engine bay cleaning</li>
-                                <li><span class="check-icon">✓</span> Trunk/cargo area detail</li>
-                                <li><span class="check-icon">✓</span> Extended paint sealant protection</li>
-                                <li><span class="check-icon">✓</span> Fabric/leather protectant</li>
+                                <li><span class="check-icon">✓</span> Vehicles that have not been detailed in a while</li>
+                                <li><span class="check-icon">✓</span> Interiors with stains, spills, or heavy use</li>
+                                <li><span class="check-icon">✓</span> Pet owners, families, and daily drivers</li>
+                                <li><span class="check-icon">✓</span> Owners who want a full reset without paint correction</li>
                             </ul>
                         </div>
-                        
-                        <div class="service-detail-note">
-                            <strong>💡 Pro Tip:</strong> We recommend a Full Detail every 3-4 months to maintain your vehicle in pristine condition year-round.
-                        </div>
-                        
+                        <div class="service-detail-note"><strong>Why customers choose it:</strong> This package delivers one of the biggest visual transformations on the site and works well as a starting point for ongoing maintenance.</div>
                         <div class="service-detail-cta">
-                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                                <span>Book Full Detail</span>
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                                <span>Quote Form</span>
-                            </a>
+                            <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book Full Detail</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="services.html#quote" class="btn-secondary"><span>Request a Quote</span></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Paint Correction -->
-                <div class="service-detail-card" id="paint-correction">
+                <div class="service-detail-card" id="interior">
                     <div class="service-detail-content">
                         <div class="service-detail-header">
-                            <div class="service-detail-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="3"/>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                                </svg>
-                            </div>
+                            <div class="service-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
                             <div>
-                                <h2>Paint Correction</h2>
-                                <p class="service-tagline">Restore your paint to perfection</p>
+                                <h2 data-ciel-field="services.interior.title">Interior Detail</h2>
+                                <p class="service-tagline" data-ciel-field="services.interior.tagline">Deep Cleaning, Stain & Odor Removal</p>
                             </div>
                         </div>
-                        <p class="service-detail-intro">Our paint correction services remove swirl marks, scratches, water spots, and oxidation to restore your paint to showroom condition. We offer different levels based on your needs and budget.</p>
-                        
+                        <p class="service-detail-intro" data-ciel-field="services.interior.intro">Our Interior Detail goes far beyond a wipe-down, focusing on vacuuming, steam cleaning, extraction, and conditioning to restore comfort and cleanliness inside the cabin.</p>
+                        <div class="service-detail-copy">
+                            <p>We vacuum seats, carpets, mats, trunk areas, and hard-to-reach spaces before steam cleaning vents, seams, cup holders, door panels, and trim gaps where dirt and bacteria collect. Cloth upholstery is shampooed and extracted, while leather surfaces are carefully cleaned and conditioned.</p>
+                            <p>Dashboards, center consoles, and trim are finished with non-greasy products so the interior keeps a clean, factory-like look instead of a glossy residue.</p>
+                        </div>
                         <div class="service-levels">
-                            <div class="service-level">
-                                <h5>Paint Enhancement (1-Step)</h5>
-                                <p>Light correction that removes 20-30% of defects. Perfect for newer vehicles or maintenance.</p>
-                            </div>
-                            <div class="service-level">
-                                <h5>2-Step Correction</h5>
-                                <p>Our most popular option, removing 70-95% of defects for a dramatic transformation.</p>
-                            </div>
-                            <div class="service-level">
-                                <h5>Multi-Step Correction</h5>
-                                <p>For severely damaged paint requiring extensive restoration work.</p>
-                            </div>
+                            <div class="service-level"><h5>Optional Interior Add-Ons</h5><p>Advanced stain treatment, pet hair removal, odor elimination, and mold or bio-contamination treatment can be added based on the vehicle's actual condition.</p></div>
                         </div>
-                        
-                        <div class="service-detail-note">
-                            <strong>💡 Recommended:</strong> Pair paint correction with ceramic coating for long-lasting protection of your newly corrected paint.
+                        <div class="service-detail-features">
+                            <h4>Who This Service Is Best For</h4>
+                            <ul>
+                                <li><span class="check-icon">✓</span> Vehicles with stains, spills, or odors</li>
+                                <li><span class="check-icon">✓</span> Pet owners and family vehicles</li>
+                                <li><span class="check-icon">✓</span> Ride-share and work vehicles</li>
+                                <li><span class="check-icon">✓</span> Interiors that have not been professionally detailed recently</li>
+                            </ul>
                         </div>
-                        
                         <div class="service-detail-cta">
-                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                                <span>Book Paint Correction</span>
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                                <span>Quote Form</span>
-                            </a>
+                            <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book Interior Detail</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="services.html#quote" class="btn-secondary"><span>Request a Quote</span></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Ceramic Coating -->
                 <div class="service-detail-card" id="ceramic">
                     <div class="service-detail-content">
                         <div class="service-detail-header">
-                            <div class="service-detail-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                            </div>
+                            <div class="service-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                             <div>
-                                <h2>Ceramic Coating</h2>
-                                <p class="service-tagline">Ultimate long-term protection</p>
+                                <h2 data-ciel-field="services.ceramic.title">Ceramic Coating</h2>
+                                <p class="service-tagline" data-ciel-field="services.ceramic.tagline">Long-Term Paint Protection Options</p>
                             </div>
                         </div>
-                        <p class="service-detail-intro">Ceramic coating is a liquid polymer that bonds to your vehicle's paint, creating a protective layer that lasts for years. Experience incredible water beading, UV protection, and a glossy finish that's easy to maintain.</p>
-                        
+                        <p class="service-detail-intro" data-ciel-field="services.ceramic.intro">Ceramic coating chemically bonds to the paint for durable gloss, easier washing, UV defense, and hydrophobic behavior that lasts far longer than waxes or sealants.</p>
+                        <div class="service-detail-copy">
+                            <p>We offer multiple coating options so you can choose protection that fits your vehicle, ownership plans, and budget. Every package depends on proper paint prep, and paint correction may be recommended based on the condition of the finish.</p>
+                        </div>
+                        <div class="service-levels">
+                            <div class="service-level"><h5>2-Year Ceramic Coating</h5><p>A strong entry-level option for customers who want gloss and water beading without committing to the longest-term package. Best for leases, short-term ownership, and first-time ceramic customers.</p></div>
+                            <div class="service-level"><h5>5-Year Ceramic Coating</h5><p>Our most popular ceramic package with an excellent balance of durability, value, and long-term protection. Best for daily drivers and owners planning to keep the vehicle for years.</p></div>
+                            <div class="service-level"><h5>8-Year Ceramic Coating</h5><p>Our highest-durability ceramic option for new vehicles, enthusiast cars, and long-term owners focused on preserving paint condition and resale value.</p></div>
+                        </div>
                         <div class="service-detail-features">
-                            <h4>Benefits of Ceramic Coating:</h4>
+                            <h4>Important Notes</h4>
                             <ul>
-                                <li><span class="check-icon">✓</span> Extreme hydrophobicity (water beading)</li>
-                                <li><span class="check-icon">✓</span> Protection from UV rays & oxidation</li>
-                                <li><span class="check-icon">✓</span> Resistance to chemical stains & etching</li>
-                                <li><span class="check-icon">✓</span> Enhanced gloss and depth of color</li>
-                                <li><span class="check-icon">✓</span> Easier cleaning & maintenance</li>
-                                <li><span class="check-icon">✓</span> 2-8 year durability with proper care</li>
+                                <li><span class="check-icon">✓</span> Proper paint preparation is required for best results</li>
+                                <li><span class="check-icon">✓</span> Paint correction may be recommended or required</li>
+                                <li><span class="check-icon">✓</span> Coating longevity depends on maintenance habits</li>
+                                <li><span class="check-icon">✓</span> Ideal upgrade after correction work</li>
                             </ul>
                         </div>
-                        
-                        <div class="service-detail-benefits">
-                            <h4>Our Process:</h4>
-                            <div class="process-steps">
-                                <div class="process-step">
-                                    <span class="step-num">1</span>
-                                    <div>
-                                        <strong>Wash & Decontamination</strong>
-                                        <p>Thorough wash, clay bar, iron removal</p>
-                                    </div>
-                                </div>
-                                <div class="process-step">
-                                    <span class="step-num">2</span>
-                                    <div>
-                                        <strong>Paint Correction</strong>
-                                        <p>Remove swirls and imperfections</p>
-                                    </div>
-                                </div>
-                                <div class="process-step">
-                                    <span class="step-num">3</span>
-                                    <div>
-                                        <strong>Panel Prep</strong>
-                                        <p>Alcohol wipe for perfect bonding</p>
-                                    </div>
-                                </div>
-                                <div class="process-step">
-                                    <span class="step-num">4</span>
-                                    <div>
-                                        <strong>Coating Application</strong>
-                                        <p>Professional ceramic coating applied</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <div class="service-detail-cta">
-                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                                <span>Book Ceramic Coating</span>
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                                <span>Quote Form</span>
-                            </a>
+                            <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book Ceramic Coating</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="services.html#quote" class="btn-secondary"><span>Request a Quote</span></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Paint Protection Film -->
+                <div class="service-detail-card" id="paint-correction">
+                    <div class="service-detail-content">
+                        <div class="service-detail-header">
+                            <div class="service-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                            <div>
+                                <h2 data-ciel-field="services.paint_correction.title">Paint Correction</h2>
+                                <p class="service-tagline" data-ciel-field="services.paint_correction.tagline">Restore Clarity, Gloss & Depth</p>
+                            </div>
+                        </div>
+                        <p class="service-detail-intro" data-ciel-field="services.paint_correction.intro">Paint correction removes swirl marks, light scratches, oxidation, and other surface-level defects that make paint look dull or hazy over time.</p>
+                        <div class="service-detail-copy"><p>We offer multiple levels of correction so owners can choose the right balance of results, time, and investment based on the condition of the paint and the outcome they want.</p></div>
+                        <div class="service-levels">
+                            <div class="service-level"><h5>Paint Enhancement</h5><p>Designed for customers who want more gloss and clarity with lighter defect removal, typically around 25 percent. Best for newer paint and owners prioritizing shine over perfection.</p></div>
+                            <div class="service-level"><h5>1-Step Paint Correction</h5><p>Our most popular correction tier, usually removing roughly 50 to 80 percent of swirl marks and light scratches. Best for daily drivers that need a dramatic improvement without chasing every deep defect.</p></div>
+                            <div class="service-level"><h5>2-Step Paint Correction</h5><p>Compounding plus refining polish for near-showroom results, with up to 95 percent removal depending on paint condition. Best for enthusiasts, show vehicles, and coating prep.</p></div>
+                        </div>
+                        <div class="service-detail-features">
+                            <h4>Important Notes</h4>
+                            <ul>
+                                <li><span class="check-icon">✓</span> Results depend on paint condition and defect depth</li>
+                                <li><span class="check-icon">✓</span> Some scratches may be too deep to safely remove</li>
+                                <li><span class="check-icon">✓</span> Often recommended before ceramic coating or PPF</li>
+                                <li><span class="check-icon">✓</span> Great upgrade for vehicles with automatic wash damage</li>
+                            </ul>
+                        </div>
+                        <div class="service-detail-cta">
+                            <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book Paint Correction</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="services.html#quote" class="btn-secondary"><span>Request a Quote</span></a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="service-detail-card" id="ppf">
                     <div class="service-detail-content">
                         <div class="service-detail-header">
-                            <div class="service-detail-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                    <path d="M12 8v4M12 16h.01"/>
-                                </svg>
-                            </div>
+                            <div class="service-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg></div>
                             <div>
-                                <h2>Paint Protection Film (PPF)</h2>
-                                <p class="service-tagline">Invisible armor for your paint</p>
+                                <h2 data-ciel-field="services.ppf.title">Paint Protection Film (PPF)</h2>
+                                <p class="service-tagline" data-ciel-field="services.ppf.tagline">Long-Term Defense for Your Paint</p>
                             </div>
                         </div>
-                        <p class="service-detail-intro">Paint Protection Film is a virtually invisible urethane film that protects your vehicle's paint from rock chips, scratches, bug acids, and other road debris. Self-healing technology repairs minor scratches with heat.</p>
-                        
+                        <p class="service-detail-intro" data-ciel-field="services.ppf.intro">Paint Protection Film is one of the most effective ways to defend against rock chips, scratches, road debris, and daily wear while preserving your factory finish underneath.</p>
+                        <div class="service-detail-copy">
+                            <p>At our Elk Grove shop, we install authorized STEK paint protection film, known for clarity, durability, and long-term performance. Every installation is backed by a 10-year manufacturer warranty against defects like cracking, peeling, and discoloration.</p>
+                        </div>
+                        <div class="service-levels">
+                            <div class="service-level"><h5>Partial Frontal Package</h5><p>Covers the most commonly impacted front-end areas, typically including partial hood, partial fenders, front bumper, and headlights. Best for daily drivers and budget-conscious protection.</p></div>
+                            <div class="service-level"><h5>Full Frontal Package</h5><p>Our most popular PPF option with full hood, full front fenders, bumper, mirrors, and lights for seamless front-end coverage. Best for new vehicles and long-term ownership.</p></div>
+                            <div class="service-level"><h5>Track Package</h5><p>Builds on the full frontal package by adding A-pillars and rocker panels for additional high-impact defense. Best for enthusiast and performance vehicles.</p></div>
+                            <div class="service-level"><h5>Full Vehicle PPF</h5><p>Maximum paint protection across all painted exterior surfaces. Best for high-value vehicles and owners seeking complete protection.</p></div>
+                        </div>
                         <div class="service-detail-features">
-                            <h4>Coverage Options:</h4>
+                            <h4>Important Notes</h4>
                             <ul>
-                                <li><span class="check-icon">✓</span> Full Front End (hood, fenders, bumper, mirrors)</li>
-                                <li><span class="check-icon">✓</span> Partial Front (bumper, headlights, mirrors)</li>
-                                <li><span class="check-icon">✓</span> Track Pack (full front + rockers + A-pillars)</li>
-                                <li><span class="check-icon">✓</span> Full Body Coverage</li>
-                                <li><span class="check-icon">✓</span> Custom areas as needed</li>
+                                <li><span class="check-icon">✓</span> PPF protects paint but does not repair existing damage</li>
+                                <li><span class="check-icon">✓</span> Paint correction may be recommended before installation</li>
+                                <li><span class="check-icon">✓</span> Can be paired with ceramic coating for easier maintenance</li>
+                                <li><span class="check-icon">✓</span> Coverage can be tailored to the way you drive</li>
                             </ul>
                         </div>
-                        
-                        <div class="service-detail-benefits">
-                            <h4>PPF Features:</h4>
-                            <div class="benefits-grid">
-                                <div class="benefit-item">
-                                    <strong>Self-Healing</strong>
-                                    <p>Minor scratches disappear with heat from the sun or warm water</p>
-                                </div>
-                                <div class="benefit-item">
-                                    <strong>10 Year Warranty</strong>
-                                    <p>Premium films backed by manufacturer warranty</p>
-                                </div>
-                                <div class="benefit-item">
-                                    <strong>Crystal Clear</strong>
-                                    <p>Optically clear film that's virtually invisible when installed</p>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <div class="service-detail-cta">
-                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                                <span>Book PPF Installation</span>
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                                <span>Quote Form</span>
-                            </a>
+                            <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book PPF Installation</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="services.html#quote" class="btn-secondary"><span>Request a Quote</span></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Window Tint -->
                 <div class="service-detail-card" id="tint">
                     <div class="service-detail-content">
                         <div class="service-detail-header">
-                            <div class="service-detail-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                    <line x1="8" y1="21" x2="16" y2="21"/>
-                                    <line x1="12" y1="17" x2="12" y2="21"/>
-                                </svg>
-                            </div>
+                            <div class="service-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
                             <div>
-                                <h2>Window Tint</h2>
-                                <p class="service-tagline">Style meets protection</p>
+                                <h2 data-ciel-field="services.tint.title">Window Tint</h2>
+                                <p class="service-tagline" data-ciel-field="services.tint.tagline">Comfort, Heat Rejection & UV Protection</p>
                             </div>
                         </div>
-                        <p class="service-detail-intro">Professional window tinting not only enhances your vehicle's appearance but also provides crucial protection from heat and UV rays. We use premium ceramic films for superior performance.</p>
-                        
+                        <p class="service-detail-intro" data-ciel-field="services.tint.intro">Quality tint improves comfort, reduces heat buildup, blocks UV rays, and adds privacy while keeping a clean, factory-looking finish.</p>
+                        <div class="service-detail-copy"><p>We offer multiple film types so customers can choose the right balance of performance, appearance, and value depending on how they drive and what matters most to them.</p></div>
+                        <div class="service-levels">
+                            <div class="service-level"><h5>Carbon Window Tint</h5><p>A major upgrade over basic dyed film with improved heat rejection, a clean black appearance, and better long-term color stability. Best for daily drivers who want better performance without going ceramic.</p></div>
+                            <div class="service-level"><h5>Ceramic Window Tint</h5><p>Our most popular tint option, balancing heat rejection, UV blocking, visibility, and value. Best for most drivers looking for strong daily-use performance.</p></div>
+                            <div class="service-level"><h5>Ceramic Plus Window Tint</h5><p>Our highest-performance film for maximum infrared heat rejection and interior comfort, especially in hot summers and long commutes.</p></div>
+                        </div>
                         <div class="service-detail-features">
-                            <h4>Benefits:</h4>
+                            <h4>Available Tint Shades</h4>
                             <ul>
-                                <li><span class="check-icon">✓</span> Cuts heat by up to 60%</li>
-                                <li><span class="check-icon">✓</span> Blocks 99% of harmful UV rays</li>
-                                <li><span class="check-icon">✓</span> Reduces glare for safer driving</li>
-                                <li><span class="check-icon">✓</span> Increased privacy and security</li>
-                                <li><span class="check-icon">✓</span> Protects interior from fading</li>
-                                <li><span class="check-icon">✓</span> Sleek, custom appearance</li>
+                                <li><span class="check-icon">✓</span> 70% for clear or light heat rejection</li>
+                                <li><span class="check-icon">✓</span> 50% for a mild shade</li>
+                                <li><span class="check-icon">✓</span> 35% for balanced visibility and privacy</li>
+                                <li><span class="check-icon">✓</span> 20% for a darker privacy look</li>
+                                <li><span class="check-icon">✓</span> 5% for maximum privacy</li>
+                                <li><span class="check-icon">✓</span> Windshield and sunroof tint options available</li>
                             </ul>
                         </div>
-                        
-                        <div class="service-detail-benefits">
-                            <h4>Tint Options:</h4>
-                            <div class="benefits-grid">
-                                <div class="benefit-item">
-                                    <strong>Ceramic Tint</strong>
-                                    <p>Premium heat rejection without signal interference</p>
-                                </div>
-                                <div class="benefit-item">
-                                    <strong>Carbon Tint</strong>
-                                    <p>Great value with excellent heat blocking</p>
-                                </div>
-                                <div class="benefit-item">
-                                    <strong>Dyed Film</strong>
-                                    <p>Budget-friendly option for appearance</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="service-detail-note">
-                            <strong>California Legal:</strong> We ensure all installations comply with California tint laws. Ask about our legal tint options.
-                        </div>
-                        
+                        <div class="service-detail-note"><strong>Important notes:</strong> All films are installed in-house at our Elk Grove shop, and shade availability can vary by film type and vehicle.</div>
                         <div class="service-detail-cta">
-                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                                <span>Book Window Tint</span>
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                                <span>Quote Form</span>
-                            </a>
+                            <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book Window Tint</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="services.html#quote" class="btn-secondary"><span>Request a Quote</span></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Overnight Service -->
                 <div class="service-detail-card" id="overnight">
                     <div class="service-detail-content">
                         <div class="service-detail-header">
-                            <div class="service-detail-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                                </svg>
-                            </div>
+                            <div class="service-detail-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
                             <div>
-                                <h2>Overnight Detail Service</h2>
-                                <p class="service-tagline">Convenience on your schedule</p>
+                                <h2 data-ciel-field="services.overnight.title">Overnight Detail Service</h2>
+                                <p class="service-tagline" data-ciel-field="services.overnight.tagline">Built for Busy Schedules</p>
                             </div>
                         </div>
-                        <p class="service-detail-intro">Can't find time during the day? Our overnight service lets you drop off your vehicle in the evening and pick it up first thing in the morning. Wake up to a freshly detailed car!</p>
-                        
+                        <p class="service-detail-intro" data-ciel-field="services.overnight.intro">Overnight detailing is designed for customers who want professional work done without interrupting the day - drop off in the evening and pick up the next morning.</p>
+                        <div class="service-detail-copy">
+                            <p>This option gives us more time for thorough interior and exterior work while giving you maximum flexibility. It is commonly paired with full details, interior deep cleans, exterior detailing, and paint correction services.</p>
+                        </div>
+                        <div class="service-levels">
+                            <div class="service-level"><h5>How Overnight Detailing Works</h5><p>Evening drop-off at our Elk Grove shop, detailing completed overnight, and pickup the following morning.</p></div>
+                            <div class="service-level"><h5>Who It Is Best For</h5><p>Busy professionals, customers booking multiple services, vehicles that need extended detail time, and anyone wanting flexible drop-off and pickup.</p></div>
+                        </div>
                         <div class="service-detail-features">
-                            <h4>How It Works:</h4>
+                            <h4>Important Notes</h4>
                             <ul>
-                                <li><span class="check-icon">✓</span> Drop off your vehicle between 5-7 PM</li>
-                                <li><span class="check-icon">✓</span> We detail overnight while you sleep</li>
-                                <li><span class="check-icon">✓</span> Pick up your fresh car in the morning (8-9 AM)</li>
-                                <li><span class="check-icon">✓</span> Secure, monitored facility</li>
-                                <li><span class="check-icon">✓</span> Available for most detailing services</li>
+                                <li><span class="check-icon">✓</span> Subject to scheduling availability</li>
+                                <li><span class="check-icon">✓</span> Not every service requires overnight drop-off</li>
+                                <li><span class="check-icon">✓</span> Vehicles must be dropped off at the agreed time</li>
+                                <li><span class="check-icon">✓</span> Ideal for multi-service appointments</li>
                             </ul>
                         </div>
-                        
                         <div class="service-detail-cta">
-                            <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                                <span>Book Overnight Service</span>
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </a>
-                            <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                                <span>Request Info</span>
-                            </a>
+                            <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book Overnight Service</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                            <a href="services.html#quote" class="btn-secondary"><span>Request Info</span></a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -573,15 +358,10 @@
             <div class="container">
                 <div class="cta-content">
                     <h2>Ready to Get <em>Started?</em></h2>
-                    <p>Book your appointment online or request a custom quote. We're here to make your vehicle shine!</p>
+                    <p data-ciel-field="services_detail.cta.subtitle">Book online or request a quote to match your vehicle, your goals, and the level of protection or restoration you want next.</p>
                     <div class="cta-buttons">
-                        <a href="https://vividautodetails.fieldd.co/" target="_blank" class="btn-primary">
-                            <span>Book Online Now</span>
-                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                        <a href="index.html?skipIntro=true#contact" class="btn-secondary">
-                            <span>Request a Quote</span>
-                        </a>
+                        <a href="https://cielonline.com/book/vivid-auto-details" target="_blank" data-ciel-link="booking" class="btn-primary"><span>Book Online Now</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <a href="services.html#quote" class="btn-secondary"><span>Request a Quote</span></a>
                     </div>
                 </div>
             </div>
@@ -650,5 +430,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cielonline.com/bridge.js" data-supabase-url="https://rmuqwdfbjisugvbotdox.supabase.co" data-supabase-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtdXF3ZGZiamlzdWd2Ym90ZG94Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0MjMzMDAsImV4cCI6MjA4Njk5OTMwMH0.06ACfPnBxKmOn1ii3EWa3mNML-jwG_XgdxeW1ImN3v8" data-site-slug="vivid-auto-details"></script>
 </body>
 </html>
