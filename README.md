@@ -30,17 +30,21 @@ vivid-website/
 
 ## 🚀 Deployment
 
-### GitHub Pages
-1. Push this repository to GitHub
-2. Go to Settings > Pages
-3. Select "Deploy from a branch"
-4. Choose `main` branch and `/ (root)` folder
-5. Your site will be live at `https://yourusername.github.io/repository-name`
+### Vercel
+1. Import the repository into Vercel as a static site
+2. Keep the output as the repository root with no build command
+3. Add the custom domain in Vercel and keep the existing `CNAME` aligned with the production domain
+4. Redeploy after any HTML, CSS, image, or bridge configuration change
 
-### Custom Domain
-To use a custom domain like `vividautodetails.com`:
-1. Add a CNAME file with your domain
-2. Configure DNS settings with your domain provider
+### GitHub
+GitHub remains the source of truth for the codebase. Vercel should deploy directly from the default branch so content and bridge updates stay versioned in one place.
+
+### Cielonline Bridge
+The live site is wired for Cielonline bridge support:
+- `bridge.js` is loaded on every page
+- booking CTAs use `data-ciel-link="booking"`
+- quote forms use dual submission: Google Apps Script plus `window.Cielonline.submitInquiry(...)`
+- key editable text uses `data-ciel-field`
 
 ## 📞 Contact
 
@@ -49,7 +53,7 @@ To use a custom domain like `vividautodetails.com`:
 - **Hours:** Mon-Sat 9am-7pm
 - **Instagram:** [@vivid.autodetails](https://www.instagram.com/vivid.autodetails/)
 - **Yelp:** [Vivid Auto Details](https://www.yelp.com/biz/vivid-auto-details-elk-grove)
-- **Book Online:** [vividautodetails.fieldd.co](https://vividautodetails.fieldd.co/)
+- **Book Online:** [cielonline.com/book/vivid-auto-details](https://cielonline.com/book/vivid-auto-details)
 
 ## 📝 License
 
