@@ -28,8 +28,14 @@ export function QuoteForm() {
   const [error, setError] = useState("");
 
   const canSubmit = useMemo(() => {
-    return firstName.trim() && email.trim() && vehicle.trim() && selectedServices.length > 0;
-  }, [firstName, email, vehicle, selectedServices]);
+    return (
+      firstName.trim() &&
+      email.trim() &&
+      phone.trim() &&
+      vehicle.trim() &&
+      selectedServices.length > 0
+    );
+  }, [firstName, email, phone, vehicle, selectedServices]);
 
   const toggleService = (service: string) => {
     setSelectedServices((prev) =>
@@ -112,8 +118,14 @@ export function QuoteForm() {
           <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
         <div className="form-group">
-          <label htmlFor="phone">Phone</label>
-          <input id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+          <label htmlFor="phone">Phone *</label>
+          <input
+            id="phone"
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
         </div>
       </div>
 
